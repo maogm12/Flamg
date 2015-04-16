@@ -42,28 +42,19 @@
 class Solution:
     # @return a list of integers
 	def grayCode(self, n):
-		if n == 0:
-			return [0]
-		num = [0 for i in range(n)]
-		results = []
-		self.generate(0, num, results)
-		return results
+		self.num = 0
+		self.results = []
+		self.generate(n-1)
+		return self.results
 	
-	def generate(self, index, num, results):
-		if index == len(num):
-			result = self.binary2num(num)
-			results.append(result)
+	def generate(self, index):
+		if index < 0:
+			self.results.append(self.num)
 			return
-		self.generate(index+1, num, results)
-		num[index] = 1 - num[index]
-		self.generate(index+1, num, results)
+		self.generate(index-1)
+		self.num = (1 << index) ^ self.num
+		self.generate(index-1)
 	
-	# 将0/1数组转换为整数
-	def binary2num(self, num):
-		result = 0
-		for i in range(len(num)):
-			result += num[i] * (2**(len(num) - i - 1))
-		return result
 ```
 
 - 第二种解法：
@@ -73,22 +64,48 @@ class Solution:
     # @param n, an integer
     # @return an integer[]
     def grayCode(self, n):
+        result = [0]
         if n == 0:
-            return [0]
-        result = [0, 1]
-        i = 1
+            return result
+        i = 0
         product = 1
         while i < n:
-            product *= 2
             j = len(result)-1
             while j >= 0:
                 result.append(result[j] + product)
                 j -= 1
+            product *= 2
             i += 1
         return result
 ```
 
 ### cpp code
+
+- 第一种解法
+
+```cpp
+class Solution {
+public:
+    vector<int> grayCode(int n) {
+        num = 0;
+        result.clear();
+        generate(n-1);
+        return result;
+    }
+    void generate(int index) {
+        if (index < 0) {
+            result.push_back(num);
+            return;
+        }
+        generate(index-1);
+        num = (1 << index) ^ num;
+        generate(index-1);
+    }
+private:
+    int num;
+    vector<int> result;
+};
+```
 
 - 第二种解法
 
@@ -101,15 +118,14 @@ public:
         if (n == 0) {
             return result;
         }
-        result.push_back(1);
-        int i = 1, product = 1;
+        int i = 0, product = 1;
         while (i < n) {
-            product *= 2;
             int j = result.size() - 1;
             while (j >= 0) {
                 result.push_back(result[j] + product);
                 j--;
             }
+            product *= 2;
             i++;
         }
         return result;
