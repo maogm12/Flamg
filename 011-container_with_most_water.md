@@ -24,13 +24,31 @@
 
 - Search
 
-	没有什么明显算法特征的题，就可以用搜索来做了。我们从两头往中间搜索。
+	没有什么明显算法特征的题，就可以用搜索来做了。我们从两头往中间搜索，有没有发现最大的面积计算的时候是用选定的两个 `height` 中较小的算的，对于某种情况，选定 `height[i]` 和 `height[j]`，其中 `i < j, height[i] < height[j]`，那么如果我们将 `j` 继续变小，我们不可能得到更大的面积，因为矩形的宽度 `j - i` 变小了，高度最大只能是 `height[i]`，所以这个时候我们应该增大 `i`。
+	
+	时间复杂度是 O(n)
 
 ## Code
 
 ### Python
 
-wait a minue...
+```python
+class Solution:
+    # @param height, an integer[]
+    # @return an integer
+    def maxArea(self, height):
+        left = 0
+        right = len(height) - 1
+        maxValue = 0
+        while left < right:
+            if height[left] < height[right]:
+                maxValue = max(maxValue, (right - left) * height[left])
+                left += 1
+            else:
+                maxValue = max(maxValue, (right - left) * height[right])
+                right -= 1
+        return maxValue
+```
 
 ### C++
 
@@ -52,6 +70,25 @@ public:
                 maxValue = max(maxValue, height[left] * (right - left));
                 left++;
             }
+        }
+        return maxValue;
+    }
+};
+
+// 代码可以进一步精简
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int left = 0, right = height.size() - 1;
+        int maxValue = 0;
+        while (left < right) {
+			if (height[left] >= height[right]) {
+				maxValue = max(maxValue, height[right] * (right - left));
+				right--;
+			} else {
+				maxValue = max(maxValue, height[left] * (right - left));
+				left++;
+			}
         }
         return maxValue;
     }
