@@ -90,7 +90,32 @@ class Solution:
 
 ### cpp code
 
-> wait ...
+- 第二种解法
+
+```cpp
+class Solution {
+public:
+    vector<int> grayCode(int n) {
+        vector<int> result;
+        result.push_back(0);
+        if (n == 0) {
+            return result;
+        }
+        result.push_back(1);
+        int i = 1, product = 1;
+        while (i < n) {
+            product *= 2;
+            int j = result.size() - 1;
+            while (j >= 0) {
+                result.push_back(result[j] + product);
+                j--;
+            }
+            i++;
+        }
+        return result;
+    }
+};
+```
 
 
 
