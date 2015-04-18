@@ -105,3 +105,56 @@ public:
     }
 };
 ```
+
+### cpp code challege
+
+咳咳，我是发言者zyx，上述cpp代码可以有几点优化：
+
+- remain不可能大于等于20，因而，可以用减来代替%和/
+- l1或l2有一个为NULL时，可直接将剩下那个链到结果链表的后面
+- head没有delete，内存泄露。
+
+综上，新cpp代码：
+
+```cpp
+class Solution {
+public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+        ListNode *head = new ListNode(0),
+                 *current = head;
+        int remain = 0;
+        while (l1 != nullptr || l2 != nullptr || remain != 0) {
+            if (l1 == nullptr && remain == 0) {
+                current->next = l2;
+                break;
+            }
+            if (l2 == nullptr && remain == 0) {
+                current->next = l1;
+                break;
+            }
+            
+            if (l1 != nullptr) {
+                remain += l1->val;
+                l1 = l1->next;
+            }
+            if (l2 != nullptr) {
+                remain += l2->val;
+                l2 = l2->next;
+            }
+            if (remain >= 10) {
+                current->next = new ListNode(remain - 10);
+                remain = 1;
+            } else {
+                current->next = new ListNode(remain);
+                remain = 0;
+            }
+            current = current->next;
+        }
+        
+        current = head->next;
+        // do not forget to delete the useless node
+        delete head;
+        return current;
+    }
+};
+```
