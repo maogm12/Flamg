@@ -45,7 +45,7 @@ with open("problems.json") as problems_file:
                 print("The target file: {} already exists".format(filename))
                 sys.exit()
             fill_content(filename, _pid, _title)
-            print("Template generated")
+            print("Template generated: {}".format(filename))
             break
     else:
         print("Error pid")
