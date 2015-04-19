@@ -60,15 +60,15 @@ class Solution:
             if l2:
                 remain += l2.val
                 l2 = l2.next
-            
+
             current.next = ListNode(remain % 10)
             remain /= 10
             current = current.next
-            
+
         # 不要忘了可能剩下的进位哦
         if remain != 0:
             current.next = ListNode(remain)
-            
+
         return head.next
 ```
 
@@ -95,18 +95,18 @@ public:
             remain /= 10;
             current = current->next;
         }
-        
+
         // 不要忘了可能剩下的进位哦
         if (remain != 0) {
             current->next = new ListNode(remain);
         }
-        
+
         return head->next;
     }
 };
 ```
 
-### cpp code challege
+### cpp code challenge
 
 咳咳，我是发言者zyx，上述cpp代码可以有几点优化：
 
@@ -132,7 +132,7 @@ public:
                 current->next = l1;
                 break;
             }
-            
+
             if (l1 != nullptr) {
                 remain += l1->val;
                 l1 = l1->next;
@@ -150,7 +150,7 @@ public:
             }
             current = current->next;
         }
-        
+
         current = head->next;
         // do not forget to delete the useless node
         delete head;
@@ -158,3 +158,23 @@ public:
     }
 };
 ```
+
+### reply to the challenge
+
+针对大神祥子的 challenge 我有点不同意见，hiahiahiahia
+
+- remain不可能大于等于20，因而，可以用减来代替%和/
+
+	这个木有意见，我测试了 `%` 和 `-`，大概有 50% 的提升，请看 `testArea` 里面的
+	`test_remainders_divisions.cpp`
+
+- l1或l2有一个为NULL时，可直接将剩下那个链到结果链表的后面
+
+	这点我觉得，返回的链表应该是个新的才对，如果传入的链表做了一些其他操作，
+	不应该影响到结果这个链表。
+
+	另外代码更加简洁哦~
+
+- head没有delete，内存泄露。
+
+	I have failed this city, 不过祥子你是不是掉了 `head->next = nullptr;`
