@@ -46,7 +46,7 @@ class Solution:
 		self.results = []
 		self.generate(n-1)
 		return self.results
-	
+
 	def generate(self, index):
 		if index < 0:
 			self.results.append(self.num)
@@ -54,7 +54,7 @@ class Solution:
 		self.generate(index-1)
 		self.num = (1 << index) ^ self.num
 		self.generate(index-1)
-	
+
 ```
 
 - 第二种解法：
@@ -133,5 +133,29 @@ public:
 };
 ```
 
+### C++ by mgm
 
+我来厚颜无耻的贴个代码，算法就是上面那个第二种解法
 
+```cpp
+class Solution {
+public:
+	vector<int> grayCode(int n) {
+		vector<int> result(1, 0);
+		if (n == 0) {
+			return result;
+		}
+
+		result.push_back(1);
+		int toAdd = 1;
+		for (int bit = 1; bit < n; ++bit) {
+			toAdd <<= 1;
+			for (int i = result.size() - 1; i >= 0; --i) {
+				result.push_back(result[i] + toAdd);
+			}
+		}
+
+		return result;
+	}
+};
+```
