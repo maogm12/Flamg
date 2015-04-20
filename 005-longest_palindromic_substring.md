@@ -63,5 +63,43 @@ class Solution:
 ### C++
 
 ```cpp
-
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        string new_s = "#";
+        for (int i = 0; i < s.length(); i++) {
+            new_s.push_back(s[i]);
+            new_s.push_back('#');
+        }
+        int len_s = new_s.length();
+        int mx = 0;
+        int id = 0;
+        vector<int> p(len_s, 0);
+        for (int i = 0; i < len_s; i++) {
+            if (mx > id) {
+                p[i] = min(p[2*id-i], mx - i);
+            } else {
+                p[i] = 1;
+            }
+            while (i-p[i] >= 0 && i+p[i] < len_s && new_s[i-p[i]] == new_s[i+p[i]]) {
+                p[i]++;
+            }
+        }
+        int max_index = -1;
+        int max_value = 0;
+        for (int i = 0; i < len_s; i++) {
+            if (p[i] > max_value) {
+                max_value = p[i];
+                max_index = i;
+            }
+        }
+        string result = "";
+        for (int i = max_index - max_value + 1; i < max_index + max_value; i++) {
+            if (new_s[i] != '#') {
+                result += new_s[i];
+            }
+        }
+        return result;
+    }
+};
 ```
