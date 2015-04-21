@@ -42,7 +42,7 @@ class Solution:
         S.sort()
         self.gen_subset([], S, 0)
         return self.results
-    
+
     def gen_subset(self, result, S, reached_index):
         self.results.append(result)
         for i in range(reached_index, len(S)):
@@ -51,5 +51,26 @@ class Solution:
 ### C++
 
 ```cpp
+
+class Solution {
+public:
+    vector<vector<int> > subsets(vector<int> &S) {
+        sort(S.begin(), S.end());
+        results.clear();
+        vector<int> result;
+        gen_subset(result, S, 0);
+        return results;
+    }
+    void gen_subset(vector<int> result, vector<int> &S, int reached_index) {
+        results.push_back(result);
+        for (int i = reached_index; i < S.size(); i++) {
+            result.push_back(S[i]);
+            gen_subset(result, S, i+1);
+            result.pop_back();
+        }
+    }
+private:
+    vector<vector<int> > results;
+};
 
 ```
