@@ -71,9 +71,7 @@ public:
 
         if (swapPos != num.rend()) {
             auto toSwap = upper_bound(num.rbegin(), swapPos - 1, *swapPos);
-            int temp = *toSwap;
-            *toSwap = *swapPos;
-            *swapPos = temp;
+            iter_swap(swapPos, toSwap);
         }
 
         // 后面本来是逆序，反转就可以了
