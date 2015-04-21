@@ -17,14 +17,16 @@
 
     避免了递归的函数调用代价，什么？没有递归直观？忍着！
 
-    时间复杂度为 O(n)
+    时间复杂度为 O(n)，空间复杂度 O(n)
+
+    恩，其实还可以改进的！！！就用两个数记录 n - 1 和 n - 2 记录即可，空间复杂度降为 O(1)
 
 ## Code
 
 ### Python
 
 ```python
-
+# python 发来贺电
 ```
 
 ### C++
@@ -67,6 +69,24 @@ public:
             ways[i] = ways[i - 1] + ways[i - 2];
         }
         return ways[n];
+    }
+};
+```
+
+循环版本改进版
+
+```cpp
+class Solution {
+public:
+    int climbStairs(int n) {
+        int n_2 = 1;
+        int n_1 = 1;
+        for (int i = 1; i < n; ++i) {
+            int temp = n_2;
+            n_2 = n_1;
+            n_1 = temp + n_1;
+        }
+        return n_1;
     }
 };
 ```
