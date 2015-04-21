@@ -46,7 +46,9 @@ class Solution:
     def gen_subset(self, result, S, reached_index):
         self.results.append(result)
         for i in range(reached_index, len(S)):
-            self.gen_subset(result + [S[i]], S, i+1)```
+            self.gen_subset(result + [S[i]], S, i+1)
+
+```
 
 ### C++
 
