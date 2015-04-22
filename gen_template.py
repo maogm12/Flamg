@@ -3,6 +3,7 @@
 import json
 import sys
 from os import path
+from optparse import OptionParser
 
 def gen_filename(pid, title):
     return "{:0>3}-{}.md".format(pid, "_".join(map(lambda x: x.lower(), filter(lambda x: x, title.split(" ")))))
@@ -19,33 +20,48 @@ def fill_content(filename, pid, title):
         template.write("```cpp\n\n```")
 
 # get problem id
-pid = 0
-if (len(sys.argv) < 2):
-    pid = input("Generate template for which problem[id]: ")
-else:
-    pid = sys.argv[1]
+import argparse
+parser = argparse.ArgumentParser(description='Generate markdown template for leetcode')
+parser.add_argument("pid", metavar="id", nargs="?", type=int,
+                    help="id of problem to deal with")
+parser.add_argument("-s", "--search", dest="word", help="word to search")
+args = parser.parse_args()
+if args.pid is None and args.word is None:
+    parser.print_help()
+    exit()
 
-try:
-    pid = int(pid)
-except:
-    print("Error pid")
-    sys.exit()
+if args.word:
+    args.word = args.word.lower()
 
 with open("problems.json") as problems_file:
     problems = json.load(problems_file)
-    for i in range(len(problems)):
-        problem = problems[i]
-        _pid = problem.get("id", None)
-        _title = problem.get("title", None)
-        if not _pid or not _title:
-            continue
-        if _pid == pid:
-            filename = gen_filename(_pid, _title)
-            if path.exists(filename):
-                print("The target file: {} already exists".format(filename))
-                sys.exit()
-            fill_content(filename, _pid, _title)
-            print("Template generated: {}".format(filename))
-            break
+    if not args.pid:
+        problems = filter(lambda item: item.get("title") and \
+                          item["title"].lower().find(args.word) != -1, problems)
+        problems = list(problems)
+        if not problems:
+            print("No such problem whose title containing {}".format(args.word))
+        else:
+            for problem in problems:
+                _pid = problem.get("id", None)
+                _title = problem.get("title", None)
+                if not _pid or not _title:
+                    continue
+                print("{:0>3}-{}".format(problem["id"], problem["title"]))
     else:
-        print("Error pid")
+        for i in range(len(problems)):
+            problem = problems[i]
+            _pid = problem.get("id", None)
+            _title = problem.get("title", None)
+            if not _pid or not _title:
+                continue
+            if _pid == args.pid:
+                filename = gen_filename(_pid, _title)
+                if path.exists(filename):
+                    print("The target file: {} already exists".format(filename))
+                    sys.exit()
+                fill_content(filename, _pid, _title)
+                print("Template generated: {}".format(filename))
+                break
+        else:
+            print("No such problem having id {}".format(args.pid))
