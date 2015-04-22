@@ -15,8 +15,8 @@
 
     因为每个人至少一个糖，我们初始化给每人一个糖。然后：
 
-    1. 从右向左扫描，保证比相邻的左边分数高的人得到的糖果比左边那个人多一个
-    2. 从左往边扫描，保证比相邻的右边分数高的人得到的糖果比右边那个人多
+    1. 从左向右扫描，保证比相邻的左边分数高的人得到的糖果比左边那个人多一个
+    2. 从右往左扫描，保证比相邻的右边分数高的人得到的糖果比右边那个人多
 
     这样就保证了一个小盆友如果比相邻的小盆友分数高，得到的糖果多
 
@@ -26,11 +26,29 @@
 
 ### Python
 
-```python
+两遍搜索法
 
+```python
+class Solution:
+    # @param ratings, a list of integer
+    # @return an integer
+    def candy(self, ratings):
+        size = len(ratings)
+        candies = [1] * size
+        for i in xrange(1, size):
+            if ratings[i] > ratings[i - 1] and candies[i] <= candies[i - 1]:
+                candies[i] = candies[i - 1] + 1
+
+        for i in xrange(size - 2, -1, -1):
+            if ratings[i] > ratings[i + 1] and candies[i] <= candies[i + 1]:
+                candies[i] = candies[i + 1] + 1
+
+        return sum(candies)
 ```
 
 ### C++
+
+两遍搜索法
 
 ```cpp
 class Solution {
