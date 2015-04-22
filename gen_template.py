@@ -1,9 +1,10 @@
-#!/bin/python
+#!/usr/bin/env python
+# encoding: utf-8
 
 import json
 import sys
 from os import path
-from optparse import OptionParser
+import argparse
 
 def gen_filename(pid, title):
     return "{:0>3}-{}.md".format(pid, "_".join(map(lambda x: x.lower(), filter(lambda x: x, title.split(" ")))))
@@ -20,7 +21,6 @@ def fill_content(filename, pid, title):
         template.write("```cpp\n\n```")
 
 # get problem id
-import argparse
 parser = argparse.ArgumentParser(description='Generate markdown template for leetcode')
 parser.add_argument("pid", metavar="id", nargs="?", type=int,
                     help="id of problem to deal with")
