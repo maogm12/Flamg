@@ -73,3 +73,28 @@ public:
     }
 };
 ```
+
+## Challenge Code
+
+> 咳咳，我是发言者zyx，解法没有任何问题，但是代码中判断width的奇偶性确实不必要的。
+因而，代码如下更有简洁。
+
+### cpp code of challege
+
+```cpp
+class Solution {
+public:
+    void rotate(vector<vector<int> > &matrix) {
+        int n = matrix.size();
+        for (int index = 0; index < n/2; index++) {
+            for (int i = index; i < n - index - 1; i++) {
+                int tmp = matrix[index][i];
+                matrix[index][i] = matrix[n-i-1][index];
+                matrix[n-i-1][index] = matrix[n-index-1][n-i-1];
+                matrix[n-index-1][n-i-1] = matrix[i][n-index-1];
+                matrix[i][n-index-1] = tmp;
+            }
+        }
+    }
+};
+```
