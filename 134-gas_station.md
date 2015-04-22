@@ -29,6 +29,16 @@
 
     这样每个点只被访问一次，时间复杂度 O(n)
 
+- 搜索nb版
+
+    我们还可以这么搜索。
+
+    我们从头（`0`）开始，跑到一个最远能跑到的地方（`end`），然后 `[0, end]` 这之间不用管了，如果跑圈圈的时候能跑到 `0`，一定也能跑到 `end`。然后我们开始从 `end + 1` 的继续搜索，直到搜到最后一个 station
+
+    另一方面，如果总共的油比总共的耗油量大的话，我们一定是可以跑完全程的。
+
+    代码量减少一万倍！
+
 ## Code
 
 ### Python
@@ -92,6 +102,30 @@ public:
         }
 
         return -1;
+    }
+};
+```
+
+搜索nb版！！！
+
+```cpp
+class Solution {
+public:
+    int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
+        int remain = 0, // 在到达当前站点剩余的油量
+            total = 0,  // 只要总油量比消耗的大，就可以跑圈圈了
+            end = -1;   // 可以到达的位置
+        for (int i = 0; i < gas.size(); ++i) {
+            int left = gas[i] - cost[i];
+            remain += left;
+            total += left;
+            if (remain < 0) { // 不够到下一站，我们从这一站从新开始看
+                end = i;
+                remain = 0;
+            }
+        }
+
+        return total >= 0 ? end + 1 : -1;
     }
 };
 ```
