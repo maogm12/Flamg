@@ -27,7 +27,29 @@ For example, given candidate set 2,3,6,7 and target 7,
 ### Python
 
 ```python
-
+class Solution:
+    # @param candidates, a list of integers
+    # @param target, integer
+    # @return a list of lists of integers
+    def combinationSum(self, candidates, target):
+        candidates.sort()
+        self.results = []
+        result = []
+        self.combination(result, 0, candidates, 0, target)
+        return self.results
+    
+    def combination(self, result, current_sum, candidates, pre_index, target):
+        len_cand = len(candidates)
+        for i in range(pre_index, len_cand):
+            current_sum += candidates[i]
+            if current_sum > target:
+                break
+            if current_sum == target:
+                self.results.append(result + [candidates[i]])
+                break
+            self.combination(result + [candidates[i]], current_sum, candidates, i, target)
+            current_sum -= candidates[i]
+      
 ```
 
 ### C++
