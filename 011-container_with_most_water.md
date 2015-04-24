@@ -75,6 +75,11 @@ public:
     }
 };
 
+```
+
+### Simplified C++
+
+```
 // 代码可以进一步精简
 class Solution {
 public:
