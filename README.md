@@ -8,3 +8,6 @@ The flames of youth are raging.
 	全无用处想哈希。
 	先用暴力得初解，
 	再据题意破玄奇。
+	
+	贪心大法出身好，
+	正确路线永不倒。
