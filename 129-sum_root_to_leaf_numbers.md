@@ -73,5 +73,5 @@ public:
     }
 private:
     int result;
-};
+};
 ```
