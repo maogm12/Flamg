@@ -32,20 +32,19 @@ Given n = 3, your program should return all 5 unique BST's shown below.
 class Solution:
     # @return a list of tree node
     def generateTrees(self, n):
-        num = [i+1 for i in range(n)]
-        return self.generate(num, 0, n-1)
+        return self.generate(1, n)
         
-    def generate(self, num, begin, end):
+    def generate(self, begin, end):
         nodes = []
         if begin > end:
             nodes.append(None)
         else:
             for i in range(begin, end+1):
-                left_nodes = self.generate(num, begin, i-1)
-                right_nodes = self.generate(num, i+1, end)
+                left_nodes = self.generate(begin, i-1)
+                right_nodes = self.generate(i+1, end)
                 for l_node in left_nodes:
                     for r_node in right_nodes:
-                        node = TreeNode(num[i])
+                        node = TreeNode(i)
                         node.left = l_node
                         node.right = r_node
                         nodes.append(node)
@@ -55,5 +54,30 @@ class Solution:
 ### C++
 
 ```cpp
-
+class Solution {
+public:
+    vector<TreeNode *> generateTrees(int n) {
+        return generate(1, n);
+    }
+    vector<TreeNode *> generate(int begin, int end) {
+        vector<TreeNode *> nodes;
+        if (begin > end) {
+            nodes.push_back(NULL);
+        } else {
+            for (int i = begin; i <= end; i++) {
+                vector<TreeNode *> left_nodes = generate(begin, i-1);
+                vector<TreeNode *> right_nodes = generate(i+1, end);
+                for (auto left_it : left_nodes) {
+                    for (auto right_it : right_nodes) {
+                        TreeNode *node = new TreeNode(i);
+                        node->left = left_it;
+                        node->right = right_it;
+                        nodes.push_back(node);
+                    }
+                }
+            }
+        }
+        return nodes;
+    }
+};
 ```
