@@ -31,9 +31,9 @@ S = "rabbbit", T = "rabbit"
 
 ## Code
 
-### Python
+### optimized on memory python for B
 
-```optimized on memory python for B
+```python
 class Solution:
     # @param {string} s
     # @param {string} t
@@ -52,9 +52,9 @@ class Solution:
         return dp[len_t]
 ```
 
-### C++
+### Cpp for A
 
-```cpp for A
+```cpp
 class Solution {
 public:
     int numDistinct(string s, string t) {
@@ -80,7 +80,9 @@ public:
 };
 ```
 
-```cpp for B
+### cpp for B
+
+```cpp
 class Solution {
 public:
     int numDistinct(string s, string t) {
@@ -106,7 +108,9 @@ public:
 };
 ```
 
-```optimized on memory cpp for B
+### optimized on memory cpp for B
+
+```cpp
 class Solution {
 public:
     int numDistinct(string s, string t) {
