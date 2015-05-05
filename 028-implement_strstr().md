@@ -39,6 +39,21 @@
 
     我也不会，大伙自己看书去。
 
+- Sunday 算法
+
+    发现一个 NB 算法，超级容易理解，为了在匹配失败时多往后跳，我们往前看一个字符，如果这个字符不在子串里，我们可以一举跳到后面开始，如果这个字符在字串里面，我们移动字串，使得这个字符与字串中出现位置对其，然后从头开始搜索。看个栗子就懂了：
+
+    ```
+  ABCDEFABG
+  ABG
+      ABG
+        ABG
+    ```
+
+    对于这种情况，第一次匹配失败，后面（匹配整个字串长度之后的下一个）那个字符是 `D`，不在字串 `ABG` 中，所以我们可以跳过 `D` 直接从 `E` 开始搜索。
+
+    然后发现又匹配失败，这次后面的字符是第二个 `B`，字串里面有 `B`，我们移动子字符串到两个 `B` 对其，然后搜索，成功！
+
 ## Code
 
 ### Python
@@ -82,6 +97,50 @@ public:
             if (isSubString) {
                 return i;
             }
+        }
+
+        return -1;
+    }
+};
+```
+
+Sunday 算法
+
+```cpp
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        int haystackSize = haystack.size(),
+            needleSize = needle.size();
+        unordered_map<char, int> lut;
+
+        // calculate lut
+        // 如果是 ASCII 字符，可以用数组模拟，比 map 快
+        for (int i = 0; i < needleSize; ++i) {
+            lut[needle[i]] = needleSize - i;
+        }
+
+        int i = 0;
+        while (i <= haystackSize - needleSize) {
+            int jump = 1, j = 0;
+            while (j < needleSize) {
+                if (haystack[i + j] != needle[j]) {
+                    if (i + needleSize == haystackSize) {
+                        return -1;
+                    }
+
+                    // 下一个字符
+                    char later = haystack[i + needleSize];
+                    jump = lut.find(later) == lut.end() ? needleSize : lut[later];
+                    break;
+                }
+                ++j;
+            }
+
+            if (j == needleSize) {
+                return i;
+            }
+            i += jump;
         }
 
         return -1;
