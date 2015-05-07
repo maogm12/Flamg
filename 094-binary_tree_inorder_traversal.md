@@ -21,7 +21,7 @@ return [1,3,2].
 ## Solution
 
 > 非递归遍历：中序遍历的顺序是
-> 
+>
 	- 访问左子树
 	- 访问当前节点
 	- 访问右子树
@@ -82,6 +82,58 @@ public:
                 node = node->left;
             }
         }
+        return result;
+    }
+};
+```
+
+祥爷的代码十分精妙，无法改进 TT，唯一能做的就是改用 `std::stack` 了
+
+```cpp
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+
+        stack<TreeNode*> s;
+        TreeNode *node = root;
+        while (node != nullptr) {
+            s.push(node);
+            node = node->left;
+        }
+
+        while (!s.empty()) {
+            node = s.top(); s.pop();
+            result.push_back(node->val);
+
+            node = node->right;
+            while (node != nullptr) {
+                s.push(node);
+                node = node->left;
+            }
+        }
+
+        return result;
+    }
+};
+```
+
+我是发言者mgm，厚颜无耻的来贴递归代码了
+
+```cpp
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if (root == nullptr) {
+            return result;
+        }
+
+        auto leftVec = inorderTraversal(root->left);
+        auto rightVec = inorderTraversal(root->right);
+        result.insert(result.end(), leftVec.begin(), leftVec.end());
+        result.push_back(root->val);
+        result.insert(result.end(), rightVec.begin(), rightVec.end());
         return result;
     }
 };
