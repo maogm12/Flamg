@@ -20,6 +20,8 @@ return [1,2,3].
 
 ## Solution
 
+- 非递归法
+
 先序遍历是指先访问当前节点，然后访问当前节点的左子树，然后访问右子树。其非递归的流程可以使用一个栈实现：
 
 
@@ -29,7 +31,13 @@ return [1,2,3].
 	- 如果该节点右子节点不空，加入到栈
 	- 如果该节点左子节点不空，加入到栈
 	- 继续第2步
-	
+
+- 递归法
+
+	由于祥爷的非递归解法已臻化境，发言者mgm就只能用递归来填坑了。
+
+	递归解法十分符合正常思维，因为字树也是一颗树嘛，递归处理嘛
+
 ## Code
 
 ### python
@@ -55,6 +63,8 @@ class Solution:
 
 ### cpp
 
+- 非递归解法
+
 ```cpp
 class Solution {
 public:
@@ -77,6 +87,56 @@ public:
                 stack.push_back(node->left);
             }
         }
+        return result;
+    }
+};
+```
+
+可以使用标准库的栈
+
+```cpp
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if (root == nullptr) {
+            return result;
+        }
+
+        stack<TreeNode*> s;
+        s.push(root);
+        while (!s.empty()) {
+            auto node = s.top();
+            s.pop();
+            result.push_back(node->val);
+            if (node->right != nullptr) {
+                s.push(node->right);
+            }
+            if (node->left != nullptr) {
+                s.push(node->left);
+            }
+        }
+
+        return result;
+    }
+};
+```
+
+- 递归解法
+
+```cpp
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        if (root == nullptr) {
+            return vector<int>({});
+        }
+
+        vector<int> result(1, root->val);
+        auto leftVector = preorderTraversal(root->left);
+        result.insert(result.end(), leftVector.begin(), leftVector.end());
+        auto rightVector = preorderTraversal(root->right);
+        result.insert(result.end(), rightVector.begin(), rightVector.end());
         return result;
     }
 };

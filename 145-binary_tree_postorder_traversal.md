@@ -7,8 +7,8 @@
 
 > For example:
 > Given binary tree {1,#,2,3},
-> 
-```	
+>
+```
 1
  \
   2
@@ -20,6 +20,8 @@ return [3,2,1].
 > Note: Recursive solution is trivial, could you do it iteratively?
 
 ## Solution
+
+- 非递归法
 
 数据结构基础题目，虽然也是hard，当然，非递归是hard。树的后续遍历是指对某个节点，先遍历树的左子树，然后遍历右子树，最后访问当前节点。
 
