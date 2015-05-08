@@ -68,17 +68,17 @@ public:
     vector<vector<int> > levelOrder(TreeNode *root) {
         vector<vector<int> > results;
         vector<int> result;
-        
+
         if (root == NULL) {
             return results;
         }
-        
+
         vector<TreeNode *> levels;
         levels.push_back(root);
-        
+
         int begin = 0, end = 1;
         TreeNode *node = NULL;
-        
+
         while (begin < end) {
             node = levels[begin];
             result.push_back(node->val);
@@ -95,8 +95,45 @@ public:
             }
             begin++;
         }
-        
+
         return results;
+    }
+};
+```
+
+keke, I am the speaker mgm, 照旧，我就只能稍微改改祥爷的代码来凑数了
+
+这里我们可以直接使用 `std::queue`,可以简洁一点点
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> result;
+        queue<TreeNode*> current;
+        if (root != nullptr) {
+            current.push(root);
+        }
+
+        TreeNode *node = nullptr; // 当前访问的节点
+        while (!current.empty()) {
+            auto size = current.size();
+            vector<int> level;
+            level.reserve(size);
+            while (size-- > 0) {
+                node = current.front(); current.pop();
+                level.push_back(node->val);
+                if (node->left != nullptr) {
+                    current.push(node->left);
+                }
+                if (node->right != nullptr) {
+                    current.push(node->right);
+                }
+            }
+            result.push_back(level);
+        }
+
+        return result;
     }
 };
 ```
