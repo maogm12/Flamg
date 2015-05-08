@@ -34,7 +34,7 @@ return [3,2,1].
 3 判断右子树是否已经访问过了，这就需要记录上一个弹出的节点
 > 3.1 如果上一个弹出的节点是该节点的右子节点，则右子树已访问过，那么访问当前节点。
 
-> 3.2 如果上一个弹出的节点不是右子节点，则将该节点压入栈中，再对其右子节点做一路向左的压栈操作。
+> 3.2 如果上一个弹出的节点不是右子节点，则将该节点重新压入栈中，再对其右子节点做一路向左的压栈操作。
 
 4 返回第2步
 
@@ -97,6 +97,29 @@ public:
                 }
             }
         }
+        return result;
+    }
+};
+```
+
+祥爷代码简直了，无懈可击！并且和其中序遍历的代码基本一致！唯一的小瑕疵依然是可以用 `std::stack`
+
+I'm the speaker mgm, and here is the recursive solution
+
+```cpp
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if (root == nullptr) {
+            return result;
+        }
+
+        auto leftVector = postorderTraversal(root->left);
+        result.insert(result.end(), leftVector.begin(), leftVector.end());
+        auto rightVector = postorderTraversal(root->right);
+        result.insert(result.end(), rightVector.begin(), rightVector.end());
+        result.push_back(root->val);
         return result;
     }
 };
