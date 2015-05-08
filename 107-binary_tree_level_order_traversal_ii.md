@@ -29,6 +29,8 @@ Given binary tree {3,9,20,#,#,15,7},
 - 与102问题类似，使用队列类似的数据结构进行BFS，即访问当前节点时，将其左右子节点加到队列的末尾。
 - 在返回结果之前，将结果反转即可
 
+- 递归版本请参考 [102-binary_tree_level_order_traversal](./102-binary_tree_level_order_traversal.md)
+
 ## Code
 
 ### Python
@@ -69,17 +71,17 @@ public:
     vector<vector<int> > levelOrderBottom(TreeNode *root) {
         vector<vector<int> > results;
         vector<int> result;
-        
+
         if (root == NULL) {
             return results;
         }
-        
+
         vector<TreeNode *> levels;
         levels.push_back(root);
-        
+
         int begin = 0, end = 1;
         TreeNode *node = NULL;
-        
+
         while (begin < end) {
             node = levels[begin];
             result.push_back(node->val);
@@ -98,6 +100,40 @@ public:
         }
         reverse(results.begin(), results.end());
         return results;
+    }
+};
+```
+
+迭代版 by mgm
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> levelOrderBottom(TreeNode* root) {
+        vector<vector<int>> result;
+        queue<TreeNode*> q;
+        if (root != nullptr) {
+            q.push(root);
+        }
+        TreeNode *node = nullptr;
+        while (!q.empty()) {
+            auto size = q.size();
+            vector<int> level;
+            level.reserve(size);
+            while (size-- > 0) {
+                node = q.front(); q.pop();
+                level.push_back(node->val);
+                if (node->left) {
+                    q.push(node->left);
+                }
+                if (node->right) {
+                    q.push(node->right);
+                }
+            }
+            result.push_back(level);
+        }
+        reverse(result.begin(), result.end());
+        return result;
     }
 };
 ```
