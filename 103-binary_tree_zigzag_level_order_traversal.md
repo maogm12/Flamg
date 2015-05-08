@@ -73,18 +73,18 @@ public:
     vector<vector<int> > zigzagLevelOrder(TreeNode *root) {
         vector<vector<int> > results;
         vector<int> result;
-        
+
         if (root == NULL) {
             return results;
         }
-        
+
         vector<TreeNode *> levels;
         levels.push_back(root);
-        
+
         int begin = 0, end = 1;
         bool is_reverse = false;
         TreeNode *node = NULL;
-        
+
         while (begin < end) {
             node = levels[begin];
             result.push_back(node->val);
@@ -105,8 +105,49 @@ public:
             }
             begin++;
         }
-        
+
         return results;
+    }
+};
+```
+
+迭代 with `std::queue`
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        vector<vector<int>> result;
+        queue<TreeNode*> q;
+        if (root != nullptr) {
+            q.push(root);
+        }
+
+        TreeNode *node = nullptr;
+        bool needReverse = false;
+        while (!q.empty()) {
+            auto size = q.size();
+            vector<int> level;
+            level.reserve(size);
+            while (size-- > 0) {
+                node = q.front(); q.pop();
+                level.push_back(node->val);
+                if (node->left) {
+                    q.push(node->left);
+                }
+                if (node->right) {
+                    q.push(node->right);
+                }
+            }
+
+            if (needReverse) {
+                reverse(level.begin(), level.end());
+            }
+            needReverse = !needReverse;
+            result.push_back(level);
+        }
+
+        return result;
     }
 };
 ```
