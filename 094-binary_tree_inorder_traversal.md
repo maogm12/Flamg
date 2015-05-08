@@ -106,6 +106,8 @@ public:
 };
 ```
 
+## Code Challenge of MGM
+
 祥爷的代码十分精妙，无法改进 TT，唯一能做的就是改用 `std::stack` 了
 
 ```cpp
@@ -190,3 +192,30 @@ public:
     }
 };
 ```
+
+## Code Re-Challenge of ZYX
+
+毛神的递归感觉用到会用到好多vector的临时变量。下面的代码长度差不多，赶脚更具可读性，当然，我也是在更加无耻的贴递归代码
+
+```cpp
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode *root) {
+        result.clear();
+        inorder(root);
+        return result;
+    }
+    
+    void inorder(TreeNode *node) {
+        if (node == NULL) {
+            return;
+        }
+        inorder(node->left);
+        result.push_back(node->val);
+        inorder(node->right);
+    }
+private:
+    vector<int> result;
+};
+```
+
