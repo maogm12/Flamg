@@ -27,7 +27,19 @@ return its level order traversal as:
 
 ## Solution
 
-使用队列类似的数据结构进行BFS，即访问当前节点时，将其左右子节点加到队列的末尾。
+- 迭代法
+
+    使用队列类似的数据结构进行BFS，即访问当前节点时，将其左右子节点加到队列的末尾。
+
+    时间复杂度 O(n)，空间复杂度 O(1)
+
+- 递归法
+
+    如果我们在遍历的时候知道自己是在那一层，把节点加到相应的层的数组里就好了
+
+    我们可以用线序遍历，记录一个 level，每次访问子节点就将 level 加 1，这样我们可以用递归来做，前序中序后序随便选一个遍历方法即可
+
+    不过递归是要浪费空间的，时间复杂度是 O(n)，空间复杂度也是 O(n)
 
 ## Code
 
@@ -134,6 +146,34 @@ public:
         }
 
         return result;
+    }
+};
+```
+
+递归版本
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> result;
+        levelOrder(root, 0, result);
+        return result;
+    }
+
+private:
+    void levelOrder(TreeNode *root, int level, vector<vector<int>> &result) {
+        if (root == nullptr) {
+            return;
+        }
+
+        if (level >= result.size()) {
+            result.push_back(vector<int>());
+        }
+        result[level].push_back(root->val);
+
+        levelOrder(root->left, level + 1, result);
+        levelOrder(root->right, level + 1, result);
     }
 };
 ```
