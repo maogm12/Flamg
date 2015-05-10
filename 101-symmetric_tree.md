@@ -34,6 +34,11 @@ Bonus points if you could solve it both recursively and iteratively.
 	- A节点的左子树和B节点的右子树相等
 	- A节点的右子树和B节点的左子树相等
 
+- 迭代
+
+	层次遍历，如果树对称，每一层都是对称的。为了避免出现题中的情况，将 `nullptr` 也纳入层次遍历中，即题中情况，第 3 层为
+
+	`nullptr, 3, nullptr, 3`，这样这一层就不对称了
 
 ## Code
 
@@ -95,17 +100,18 @@ public:
         q.push(root);
         while (!q.empty()) {
             auto size = q.size();
-            (vector<TreeNode*>()).swap(level);
+            (vector<TreeNode*>()).swap(level); // 清空vector
             for (auto i = 0; i < size; ++i) {
                 node = q.front();
                 q.pop();
                 level.push_back(node);
-                if (node) {
+                if (node) { // 不判断left和right是否为nullptr，统统放进去
                     q.push(node->left);
                     q.push(node->right);
                 }
             }
 
+            // 是否对称
             for (auto i = 0; i < size / 2; ++i) {
                 auto low = level[i], high = level[size - 1 -i];
                 if (!low && !high || low && high && low->val == high->val) {

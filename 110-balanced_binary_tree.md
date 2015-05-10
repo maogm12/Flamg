@@ -20,7 +20,7 @@ class Solution:
     # @return a boolean
     def isBalanced(self, root):
         return self.balance(root)[1]
-    
+
     def balance(self, node):
         if node == None:
             return 0, True
@@ -48,7 +48,38 @@ public:
         bool is_right = balance(node->right, r_height);
         height = max(l_height, r_height) + 1;
         return is_left && is_right && abs(l_height - r_height) <=1;
-        
+
+    }
+};
+```
+
+This is speaker mgm, 我觉得祥爷的解法不好，哦，不是，是祥爷的解法很好，但是不太符合最优解法的预期，唉，当个程序猿企业家真TM难
+
+该解法中我们有两个值需要返回，一个是该子树是否为平衡的，还有一个就是字数的高度，以便上一层继续判断。但是喜家家不能返回多个值，搞毛啊，引用传递来救命。（估计祥爷要跳出来当头一棒，这特喵的不就是我的解法么）
+
+改进就是我们可以用 `-1` 来表示树是不平衡的，这样我们可以省去引用传递的 `height` 参数，让代码更紧凑，有张力（扯犊子）
+
+```cpp
+class Solution {
+public:
+    bool isBalanced(TreeNode* root) {
+        return calculateHeight(root) != -1;
+    }
+private:
+    int calculateHeight(TreeNode *root) {
+        if (!root) {
+            return 0;
+        }
+
+        int leftHeight = calculateHeight(root->left);
+        if (leftHeight == -1) {
+            return -1;
+        }
+        int rightHeight = calculateHeight(root->right);
+        if (rightHeight == -1) {
+            return -1;
+        }
+        return abs(leftHeight - rightHeight) <= 1 ? max(leftHeight, rightHeight) + 1 : -1;
     }
 };
 ```
