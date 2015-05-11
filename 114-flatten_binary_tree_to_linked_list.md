@@ -39,6 +39,10 @@
 
 	> 优化：每个展平链表的开始节点必然是根节点，所以只需返回展平链表的结尾节点即可。
 
+- 非递归解法
+
+	我是发言者mgm，仔细看看，这不就是前序遍历么
+
 ## Code
 
 ### Python
@@ -49,7 +53,7 @@ class Solution:
     # @return nothing, do it in place
     def flatten(self, root):
         self.sub_flatten(root)
-    
+
     def sub_flatten(self, node):
         if node == None:
             return None, None
@@ -75,7 +79,7 @@ class Solution:
     # @return nothing, do it in place
     def flatten(self, root):
         self.sub_flatten(root)
-    
+
     def sub_flatten(self, node):
         if node == None:
             return None
@@ -85,7 +89,7 @@ class Solution:
         node.right = None
         left_end  = self.sub_flatten(left_begin)
         right_end = self.sub_flatten(right_begin)
-        
+
         current_end = node
         if left_begin != None:
             current_end.right = left_begin
@@ -124,6 +128,56 @@ public:
             current_end = right_end;
         }
         return current_end;
+    }
+};
+```
+
+我是发言者mgm，我来贴个精简点的代码，我们可以先将做有flat子树，然后将左边插入根节点和右子树之间即可
+
+如果找到左子树最后一个节点呢，就是左子树最右边那的节点嘛！这样效率没有祥爷的高，因为我们每次在扁平化树之后还需要遍历一遍子树，找到末端节点
+
+```cpp
+class Solution {
+public:
+    void flatten(TreeNode* root) {
+        if (root == nullptr) return;
+        flatten(root->left);
+        flatten(root->right);
+
+        if (root->left == nullptr) return;
+        TreeNode *rightMostInLeft = root->left;
+        while (rightMostInLeft->right != nullptr) {
+            rightMostInLeft = rightMostInLeft->right;
+        }
+        rightMostInLeft->right = root->right;
+        root->right = root->left;
+        root->left = nullptr;
+    }
+};
+```
+
+hui递归解法来也
+
+```cpp
+class Solution {
+public:
+    void flatten(TreeNode* root) {
+        if (!root) return;
+
+        TreeNode dummy(0), *cur = &dummy;
+        stack<TreeNode*> nodes;
+        nodes.push(root);
+        while (!nodes.empty()) {
+            TreeNode *node = nodes.top(); nodes.pop();
+            if (node->right) nodes.push(node->right);
+            if (node->left) nodes.push(node->left);
+
+            cur->left = nullptr;
+            cur->right = node;
+            cur = cur->right;
+        }
+
+        root = dummy.right;
     }
 };
 ```

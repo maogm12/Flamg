@@ -49,3 +49,14 @@ public:
     }
 };
 ```
+
+精简版 by mgm
+
+```cpp
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        return !p && !q || p && q && isSameTree(p->left, q->left) && isSameTree(p->right, q->right) && p->val == q->val;
+    }
+};
+```

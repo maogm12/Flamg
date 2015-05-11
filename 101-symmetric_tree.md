@@ -33,7 +33,12 @@ Bonus points if you could solve it both recursively and iteratively.
 	- 两个节点相等
 	- A节点的左子树和B节点的右子树相等
 	- A节点的右子树和B节点的左子树相等
-	
+
+- 迭代
+
+	层次遍历，如果树对称，每一层都是对称的。为了避免出现题中的情况，将 `nullptr` 也纳入层次遍历中，即题中情况，第 3 层为
+
+	`nullptr, 3, nullptr, 3`，这样这一层就不对称了
 
 ## Code
 
@@ -47,7 +52,7 @@ class Solution:
         if root == None:
             return True
         return self.is_sy(root.left, root.right)
-    
+
     def is_sy(self, l_node, r_node):
         if l_node == None and r_node == None:
             return True
@@ -78,6 +83,46 @@ public:
         } else {
             return l_node->val == r_node->val && is_sy(l_node->left, r_node->right) && is_sy(l_node->right, r_node->left);
         }
+    }
+};
+```
+
+迭代版
+
+```cpp
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        if (!root) return true;
+        vector<TreeNode*> level;
+        queue<TreeNode*> q;
+        TreeNode *node;
+        q.push(root);
+        while (!q.empty()) {
+            auto size = q.size();
+            (vector<TreeNode*>()).swap(level); // 清空vector
+            for (auto i = 0; i < size; ++i) {
+                node = q.front();
+                q.pop();
+                level.push_back(node);
+                if (node) { // 不判断left和right是否为nullptr，统统放进去
+                    q.push(node->left);
+                    q.push(node->right);
+                }
+            }
+
+            // 是否对称
+            for (auto i = 0; i < size / 2; ++i) {
+                auto low = level[i], high = level[size - 1 -i];
+                if (!low && !high || low && high && low->val == high->val) {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 };
 ```
