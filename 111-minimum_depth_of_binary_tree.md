@@ -10,6 +10,12 @@
 
 - 递归，对于当前节点，计算左子树的最小深度left，右子树的最小深度right，当前节点所代表的树的最小深度就是min(left,right)+1.
 
+－ 迭代，层次遍历
+
+    BFS，扫描到节点为叶子节点停止
+
+    时间复杂度 O(n)，空间复杂度 O(n)
+
 ## Code
 
 ### Python
@@ -53,6 +59,39 @@ public:
             int min_right = minDepth(root->right);
             return min(min_left, min_right) + 1;
         }
+    }
+};
+```
+
+```cpp
+class Solution {
+public:
+    int minDepth(TreeNode* root) {
+        if (!root) return 0;
+        queue<TreeNode*> q;
+        q.push(root);
+        int level = 0;
+        TreeNode* node;
+        while (!q.empty()) {
+            level++;
+            int size = q.size();
+            while (size--) {
+                node = q.front(); q.pop();
+                if (node->left == nullptr && node->right == nullptr) {
+                    return level;
+                }
+
+                if (node->left) {
+                    q.push(node->left);
+                }
+
+                if (node->right) {
+                    q.push(node->right);
+                }
+            }
+        }
+
+        return level;
     }
 };
 ```
