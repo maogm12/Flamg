@@ -21,6 +21,10 @@
 - 自上而下：定义两个变量，上限high和下限low，那么，访问当前节点node，若当前节点在上下限之间，那么其左子树必须在low，node.val之间；右子树必须在node.val,high之间。该方法相当于先序遍历。
 - 自下而上：对于一个节点，先访问其左子树，返回其最大值left_max和最小值left_min，再访问其右子树，返回其最大值right_max和最小值right_min。然后对当前节点node判断，left_max < node.val < right_min,然后返回left_min,right_max作为该节点所代表子树的最大值和最小值。该方法相当于后序遍历。
 
+- 中序遍历法
+
+	二叉搜索树的中序遍历为有序的，若树里面没有重复的节点，可用中序遍历解
+
 ## Code
 
 ### Python for Up-to-Down
@@ -94,6 +98,37 @@ public:
             return false;
         }
         return is_valid(node->left, low, node->val, have_low, true) && is_valid(node->right, node->val, high, true, have_high);
+    }
+};
+```
+
+中序遍历法迭代版
+
+```cpp
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) {
+        TreeNode *cur = root, *pre = nullptr;
+        stack<TreeNode*> s;
+        while (cur) {
+            s.push(cur);
+            cur = cur->left;
+        }
+
+        while (!s.empty()) {
+            cur = s.top(); s.pop();
+            if (pre && pre->val >= cur->val) {
+                return false;
+            }
+            pre = cur;
+            cur = cur->right;
+            while (cur) {
+                s.push(cur);
+                cur = cur->left;
+            }
+        }
+
+        return true;
     }
 };
 ```

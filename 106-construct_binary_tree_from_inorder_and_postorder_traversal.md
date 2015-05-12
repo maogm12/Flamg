@@ -32,7 +32,7 @@ class Solution:
     # @return a tree node
     def buildTree(self, inorder, postorder):
         return self.build(inorder, postorder, 0, len(inorder)-1, 0, len(postorder)-1)
-    
+
     def build(self, inorder, postorder, ib, ie, pb, pe):
         if ib > ie or pb > pe:
             return None
@@ -42,12 +42,12 @@ class Solution:
         node.left = self.build(inorder, postorder, ib, index-1, pb, pb+index-ib-1)
         node.right = self.build(inorder, postorder, index+1, ie, pb+index-ib, pe-1)
         return node
-    
+
     def find_in(self, inorder, ib, ie, num):
         for i in range(ib, ie+1):
             if inorder[i] == num:
                 return i
-        return -1 
+        return -1
 ```
 
 ### C++
@@ -76,6 +76,31 @@ public:
             }
         }
         return -1;
+    }
+};
+```
+
+use lambda
+
+```cpp
+class Solution {
+public:
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+        typedef vector<int>::iterator Itor;
+        function<TreeNode*(Itor, Itor, int)> build = [&](Itor inStart, Itor postStart, int size) {
+            TreeNode* root = nullptr;
+            if (size == 0) return root;
+            int val = *(postStart + size - 1);
+            root = new TreeNode(val);
+            auto pos = find(inStart, inStart + size, val);
+            int leftSize = pos - inStart;
+            int rightSize = size - leftSize - 1;
+            root->left = build(inStart, postStart, leftSize);
+            root->right = build(pos + 1, postStart + leftSize, rightSize);
+            return root;
+        };
+
+        return build(inorder.begin(), postorder.begin(), inorder.size());
     }
 };
 ```
