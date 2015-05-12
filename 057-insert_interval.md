@@ -88,6 +88,8 @@ public:
 
 py和cpp在删除上的具体实现还是很不一样的。待我以后查查
 
+> 注意，下面的代码已不超时。
+
 ```cpp
 class Solution {
 public:
