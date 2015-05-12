@@ -31,7 +31,7 @@ class Solution:
     # @return a tree node
     def buildTree(self, preorder, inorder):
         return self.build(preorder, inorder, 0, len(preorder)-1, 0, len(inorder)-1)
-    
+
     def build(self, preorder, inorder, pb, pe, ib, ie):
         if pb > pe:
             return None
@@ -41,7 +41,7 @@ class Solution:
         node.left = self.build(preorder, inorder, pb+1, pb+index-ib, ib, index-1)
         node.right = self.build(preorder, inorder, pb+index-ib+1, pe, index+1, ie)
         return node
-    
+
     def find_in(self, inorder, ib, ie, num):
         for i in range(ib, ie+1):
             if inorder[i] == num:
@@ -67,7 +67,7 @@ public:
         node->left = build(preorder, inorder, pre_b+1, pre_b+index-in_b, in_b, index-1);
         node->right = build(preorder, inorder, pre_b+index-in_b+1, pre_e, index+1, in_e);
         return node;
-        
+
     }
     int find_in(vector<int> &inorder, int b, int e, int num) {
         for (int i = b; i <= e; i++) {
@@ -76,6 +76,30 @@ public:
             }
         }
         return -1;
+    }
+};
+```
+
+use lambda
+
+```cpp
+class Solution {
+public:
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        typedef vector<int>::iterator Itor;
+        function<TreeNode*(Itor,Itor,int)> build = [&](Itor prestart, Itor instart, int size) {
+            TreeNode *root = nullptr;
+            if (size == 0) { return root; }
+            root = new TreeNode(*prestart);
+            auto pos = find(instart, instart + size, *prestart);
+            int leftSize = pos - instart;
+            int rightSize = size - leftSize - 1;
+            root->left = build(prestart + 1, instart, leftSize);
+            root->right = build(prestart + 1 + leftSize, pos + 1, rightSize);
+            return root;
+        };
+
+        return build(preorder.begin(), inorder.begin(), preorder.size());
     }
 };
 ```
