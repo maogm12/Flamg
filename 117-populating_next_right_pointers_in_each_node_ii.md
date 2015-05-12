@@ -104,6 +104,8 @@ public:
 };
 ```
 
+迭代版
+
 ```cpp
 class Solution {
 public:
@@ -142,6 +144,40 @@ public:
                 leftMost = nullptr; // 后面会求出来的
                 pre = nullptr;
             }
+        }
+    }
+};
+```
+
+代码可以简化！！
+
+```cpp
+class Solution {
+public:
+    void connect(TreeLinkNode *root) {
+        while (root) {
+            TreeLinkNode *leftMost = nullptr,
+                         *pre = nullptr;
+
+            for (; root; root = root->next) {
+                if (!leftMost) leftMost = root->left ? root->left : root->right;
+
+                if (root->left) {
+                    if (pre) {
+                        pre->next = root->left;
+                    }
+                    pre = root->left;
+                }
+
+                if (root->right) {
+                    if (pre) {
+                        pre->next = root->right;
+                    }
+                    pre = root->right;
+                }
+            }
+
+            root = leftMost;
         }
     }
 };
