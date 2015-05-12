@@ -55,7 +55,7 @@ class Solution:
 
 奇怪，使用同样的算法，C++会超时，看来大python还是做了很多优化滴。
 
-	注意，下面的代码超时了，待我想出不超时的再写。
+> 注意，下面的代码超时了，待我想出不超时的再写。
 	
 ```cpp
 class Solution {
@@ -77,6 +77,39 @@ public:
         }
         intervals.push_back(newInterval);
         return intervals;
+    }
+};
+```
+
+
+使用一个新的数组来表示，就不超时了。应该是erase操作，导致的超时。不过何以python不超时呢？
+ 
+**TODO**
+
+py和cpp在删除上的具体实现还是很不一样的。待我以后查查
+
+```cpp
+class Solution {
+public:
+    vector<Interval> insert(vector<Interval>& intervals, Interval newInterval) {
+        vector<Interval> new_intervals;
+        vector<Interval>::iterator it = intervals.begin();
+        while (it != intervals.end()) {
+            if (it->start > newInterval.end) {
+                new_intervals.push_back(newInterval);
+                new_intervals.insert(new_intervals.end(), it, intervals.end());
+                return new_intervals;
+            }
+            if (it->end < newInterval.start) {
+                new_intervals.push_back(*it);
+            } else {
+                newInterval.start = min(newInterval.start, it->start);
+                newInterval.end   = max(newInterval.end,   it->end);
+            }
+            it++;
+        }
+        new_intervals.push_back(newInterval);
+        return new_intervals;
     }
 };
 ```
