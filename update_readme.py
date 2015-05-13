@@ -20,30 +20,13 @@ def getAllProblemId():
     return ids
 
 def genMarks(ids):
-    marks = '''
-<style>
-.block {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    padding: 0;
-    background-color: lightgray;
-    border-right: 1px solid white;
-}
-
-.checked {
-    background-color: deeppink;
-}
-</style>
-    '''
     if len(ids) == 0:
         return
-    marks += '\n<div><!--\n'
+    marks = '\n<p>\n'
     for i in xrange(201):
-        checked = 'checked' if i + 1 in ids else ''
-        marks += ' --><a class="block %s"></a><!--\n' % (checked)
-    marks += ' --></div>'
+        checked = 'red.gif' if i + 1 in ids else 'ddd.gif'
+        marks += '<img src="./images/%s"/>' % (checked)
+    marks += '\n</p>'
     return marks
 
 def updateReadme():
