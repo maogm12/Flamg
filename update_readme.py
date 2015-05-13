@@ -22,11 +22,11 @@ def getAllProblemId():
 def genMarks(ids):
     if len(ids) == 0:
         return
-    marks = '\n<p>\n'
+    marks = '\n'
     for i in xrange(201):
         checked = 'red.gif' if i + 1 in ids else 'ddd.gif'
-        marks += '<img src="./images/%s"/>' % (checked)
-    marks += '\n</p>'
+        marks += '![%d](./images/%s)\n' % (i + 1, checked)
+    marks += '\n'
     return marks
 
 def updateReadme():
