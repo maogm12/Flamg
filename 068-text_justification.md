@@ -87,6 +87,56 @@ class Solution:
 
 ### C++
 
-```cpp
+与python代码的思路一样。 
 
+```cpp
+class Solution {
+public:
+    vector<string> fullJustify(vector<string>& words, int maxWidth) {
+        vector<string> results;
+        int len_words = words.size();
+        int start_i = 0;
+        int i = 1;
+        int now_length = words[0].length();
+        while (i < len_words) {
+            if (now_length + 1 + words[i].length() > maxWidth) {
+                results.push_back(connect(words, start_i, i, now_length, maxWidth));
+                now_length = words[i].length();
+                start_i = i;
+            } else {
+                now_length += 1 + words[i].length();
+            }
+            i++;
+        }
+        string blank_space(maxWidth-now_length, ' ');
+        string last_line = words[start_i];
+        for (int i = start_i + 1; i < len_words; i++) {
+            last_line += ' ' + words[i];
+        }
+        last_line += blank_space;
+        results.push_back(last_line);
+        return results;
+    }
+    string connect(vector<string> &words, int start_i, int end_i, int now_length, int maxWidth) {
+        int word_num = end_i - start_i;
+        if (word_num == 1) {
+            string blank_space(maxWidth-now_length, ' ');
+            return words[start_i] + blank_space;
+        } 
+        int average_num = (maxWidth - now_length) / (word_num - 1);
+        int bonus_num   = (maxWidth - now_length) % (word_num - 1);
+        string result = words[start_i];
+        for (int i = start_i + 1; i < end_i; i++) {
+            if (bonus_num == 0) {
+                string blank_space(average_num+1, ' ');
+                result += blank_space + words[i];
+            } else {
+                string blank_space(average_num+2, ' ');
+                result += blank_space + words[i];
+                bonus_num--;
+            }
+        }
+        return result;
+    }
+};
 ```
