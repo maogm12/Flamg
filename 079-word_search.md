@@ -74,5 +74,50 @@ class Solution:
 ### C++
 
 ```cpp
-
+class Solution {
+public:
+    bool exist(vector<vector<char>>& board, string word) {
+        int m = board.size();
+        int n = board[0].size();
+        vector<vector<bool> > visited(m, vector<bool>(n, false));
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == word[0]) {
+                    if (is_exist(board, i, j, word, 0, visited)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    bool is_exist(vector<vector<char> >& board, int i, int j, string &word, int index, vector<vector<bool> > &visited) {
+        if (index == word.length()) {
+            return true;
+        }
+        int m = board.size();
+        int n = board[0].size();
+        if (i < 0 || i >= m || j < 0 || j >= n) {
+            return false;
+        }
+        if (!visited[i][j] && word[index] == board[i][j]) {
+            visited[i][j] = true;
+            if (is_exist(board, i+1, j, word, index+1, visited)) {
+                return true;
+            }
+            if (is_exist(board, i-1, j, word, index+1, visited)) {
+                return true;
+            }
+            if (is_exist(board, i, j-1, word, index+1, visited)) {
+                return true;
+            }
+            if (is_exist(board, i, j+1, word, index+1, visited)) {
+                return true;
+            }
+            visited[i][j] = false;
+        } 
+        return false;
+    }
+};
 ```
