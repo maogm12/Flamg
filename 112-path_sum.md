@@ -22,6 +22,9 @@ return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
 ## Solution
 
 - 递归，保存到从根节点到当前节点的路径和，再将该和传递给当前节点的左右子节点。
+- 递归，自顶向下，sum 一次递减，到叶子节点检测是否相等
+
+    记得和 interviewer 确认下 `nullptr` 和 `0` 是否满足
 
 ## Code
 
@@ -52,7 +55,7 @@ class Solution {
 public:
     bool hasPathSum(TreeNode *root, int sum) {
         return sum_path(root, sum, 0);
-        
+
     }
     bool sum_path(TreeNode *node, int sum, int current_sum) {
         if (node == NULL) {
@@ -64,8 +67,23 @@ public:
                 return true;
             }
             return false;
-        } 
+        }
         return sum_path(node->left, sum, current_sum) || sum_path(node->right, sum, current_sum);
+    }
+};
+```
+
+```cpp
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int sum) {
+        if (!root) return false;
+
+        if (root->left == nullptr && root->right == nullptr) {
+            return root->val == sum;
+        }
+
+        return hasPathSum(root->left, sum - root->val) || hasPathSum(root->right, sum - root->val);
     }
 };
 ```
