@@ -241,7 +241,7 @@ The flames of youth are raging.
   [38]: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
   [39]: ./images/ddd.gif (20. Valid Parentheses)
   [40]: https://leetcode.com/problems/valid-parentheses/
-  [41]: ./images/ddd.gif (21. Merge Two Sorted Lists)
+  [41]: ./images/red.gif (21. Merge Two Sorted Lists)
   [42]: https://leetcode.com/problems/merge-two-sorted-lists/
   [43]: ./images/red.gif (22. Generate Parentheses)
   [44]: https://leetcode.com/problems/generate-parentheses/
@@ -375,7 +375,7 @@ The flames of youth are raging.
   [172]: https://leetcode.com/problems/partition-list/
   [173]: ./images/ddd.gif (87. Scramble String)
   [174]: https://leetcode.com/problems/scramble-string/
-  [175]: ./images/ddd.gif (88. Merge Sorted Array)
+  [175]: ./images/red.gif (88. Merge Sorted Array)
   [176]: https://leetcode.com/problems/merge-sorted-array/
   [177]: ./images/red.gif (89. Gray Code)
   [178]: https://leetcode.com/problems/gray-code/

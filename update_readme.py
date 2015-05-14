@@ -5,6 +5,9 @@ import os
 import os.path
 import re
 import json
+import sys
+
+pedantic = sys.version_info[0] == 2
 
 def getAllProblemId():
     ids = []
@@ -41,16 +44,27 @@ def genHtml(ids):
         links += '\n'
         return marks + links
 
-def updateReadme():
-    if os.path.exists('./README.md'):
-        with open('./README.md', 'r', encoding="utf8") as readme:
-            content = readme.read()
-            marks = '## Achievement' + genHtml(getAllProblemId())
-            r = re.compile(r'## Achievement.*',re.DOTALL)
-            content = r.sub(marks, content)
+def openReadMe(mode):
+    return open('./README.md', mode) if pedantic else open('./README.md', mode, encoding='utf8')
 
-        with open('./README.md', 'w', encoding="utf8") as readme:
-            readme.write(content)
+def updateReadme():
+    with openReadMe('r') as readme:
+        content = readme.read()
+        content = content.decode('utf8')
+        marks = '## Achievement' + genHtml(getAllProblemId())
+        r = re.compile(r'## Achievement.*',re.DOTALL)
+        content = r.sub(marks, content)
+
+    with openReadMe('w') as readme:
+        content = content.encode('utf8')
+        readme.write(content)
 
 if __name__ == '__main__':
+    if not os.path.exists('./problems.json'):
+        print('No problem database found')
+        sys.exit(-1)
+    if not os.path.exists('./README.md'):
+        print('No README.md found')
+        sys.exit(-1)
+
     updateReadme()
