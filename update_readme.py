@@ -4,6 +4,7 @@
 import os
 import os.path
 import re
+import json
 
 def getAllProblemId():
     ids = []
@@ -19,25 +20,36 @@ def getAllProblemId():
     ids.sort()
     return ids
 
-def genMarks(ids):
+def genHtml(ids):
     if len(ids) == 0:
         return
     marks = '\n'
-    for i in xrange(201):
-        checked = 'red.gif' if i + 1 in ids else 'ddd.gif'
-        marks += '![%d](./images/%s)\n' % (i + 1, checked)
-    marks += '\n'
-    return marks
+    links = '\n'
+    linkId = 1
+    with open('problems.json') as problems_file:
+        problems = json.load(problems_file)
+        problems.sort(key = lambda problem: problem.get('id'))
+        for problem in problems:
+            pid = problem.get('id')
+            title = str(pid) + '. ' + problem.get('title')
+            href = problem.get('href')
+            checked = 'red.gif' if pid in ids else 'ddd.gif'
+            marks += '[![%s][%d]][%d]\n' % (title, linkId, linkId + 1)
+            links += '  [%d]: ./images/%s (%s)\n'%(linkId, checked, title)
+            links += '  [%d]: %s\n'%(linkId + 1, href)
+            linkId += 2
+        links += '\n'
+        return marks + links
 
 def updateReadme():
     if os.path.exists('./README.md'):
-        with open('./README.md', 'r') as readme:
+        with open('./README.md', 'r', encoding="utf8") as readme:
             content = readme.read()
-            marks = '## Achievement' + genMarks(getAllProblemId())
+            marks = '## Achievement' + genHtml(getAllProblemId())
             r = re.compile(r'## Achievement.*',re.DOTALL)
             content = r.sub(marks, content)
 
-        with open('./README.md', 'w') as readme:
+        with open('./README.md', 'w', encoding="utf8") as readme:
             readme.write(content)
 
 if __name__ == '__main__':
