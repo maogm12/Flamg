@@ -85,7 +85,7 @@ The flames of youth are raging.
 ![68](./images/red.gif)
 ![69](./images/red.gif)
 ![70](./images/red.gif)
-![71](./images/ddd.gif)
+![71](./images/red.gif)
 ![72](./images/red.gif)
 ![73](./images/red.gif)
 ![74](./images/ddd.gif)
