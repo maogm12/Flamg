@@ -25,6 +25,8 @@ The root-to-leaf path 1->3 represents the number 13.
 
 - 递归，当到达叶子节点时，将结果加到最终结果中。
 
+    That is a DFS!!!
+
 ## Code
 
 ### Python
@@ -37,7 +39,7 @@ class Solution:
         self.result = 0
         self.sum_num(root, 0)
         return self.result
-    
+
     def sum_num(self, node, current_sum):
         if node == None:
             return
@@ -73,5 +75,34 @@ public:
     }
 private:
     int result;
+};
+```
+
+一模一样的代码！
+
+```cpp
+class Solution {
+public:
+    int sumNumbers(TreeNode *root) {
+        sum = 0;
+        sum_num(root, 0);
+        return sum;
+    }
+private:
+    void dfs(TreeNode *root, int pre) {
+        if (root == nullptr) {
+            return;
+        }
+
+        pre = pre * 10 + root->val;
+        if (root->left == nullptr && root->right == nullptr) {
+            result += pre;
+            return;
+        }
+        dfs(root->left,  pre);
+        dfs(root->right, pre);
+    }
+
+    int sum;
 };
 ```
