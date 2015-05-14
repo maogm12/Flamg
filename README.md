@@ -349,7 +349,7 @@ The flames of youth are raging.
   [146]: https://leetcode.com/problems/set-matrix-zeroes/
   [147]: ./images/red.gif (74. Search a 2D Matrix)
   [148]: https://leetcode.com/problems/search-a-2d-matrix/
-  [149]: ./images/ddd.gif (75. Sort Colors)
+  [149]: ./images/red.gif (75. Sort Colors)
   [150]: https://leetcode.com/problems/sort-colors/
   [151]: ./images/ddd.gif (76. Minimum Window Substring)
   [152]: https://leetcode.com/problems/minimum-window-substring/
