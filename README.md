@@ -367,7 +367,7 @@ The flames of youth are raging.
   [164]: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
   [165]: ./images/red.gif (83. Remove Duplicates from Sorted List)
   [166]: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
-  [167]: ./images/ddd.gif (84. Largest Rectangle in Histogram)
+  [167]: ./images/red.gif (84. Largest Rectangle in Histogram)
   [168]: https://leetcode.com/problems/largest-rectangle-in-histogram/
   [169]: ./images/ddd.gif (85. Maximal Rectangle)
   [170]: https://leetcode.com/problems/maximal-rectangle/
@@ -435,9 +435,9 @@ The flames of youth are raging.
   [232]: https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
   [233]: ./images/red.gif (117. Populating Next Right Pointers in Each Node II)
   [234]: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
-  [235]: ./images/ddd.gif (118. Pascal's Triangle)
+  [235]: ./images/red.gif (118. Pascal's Triangle)
   [236]: https://leetcode.com/problems/pascals-triangle/
-  [237]: ./images/ddd.gif (119. Pascal's Triangle II)
+  [237]: ./images/red.gif (119. Pascal's Triangle II)
   [238]: https://leetcode.com/problems/pascals-triangle-ii/
   [239]: ./images/red.gif (120. Triangle)
   [240]: https://leetcode.com/problems/triangle/
@@ -459,7 +459,7 @@ The flames of youth are raging.
   [256]: https://leetcode.com/problems/longest-consecutive-sequence/
   [257]: ./images/red.gif (129. Sum Root to Leaf Numbers)
   [258]: https://leetcode.com/problems/sum-root-to-leaf-numbers/
-  [259]: ./images/ddd.gif (130. Surrounded Regions)
+  [259]: ./images/red.gif (130. Surrounded Regions)
   [260]: https://leetcode.com/problems/surrounded-regions/
   [261]: ./images/red.gif (131. Palindrome Partitioning)
   [262]: https://leetcode.com/problems/palindrome-partitioning/
