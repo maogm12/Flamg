@@ -245,7 +245,7 @@ The flames of youth are raging.
   [42]: https://leetcode.com/problems/merge-two-sorted-lists/
   [43]: ./images/red.gif (22. Generate Parentheses)
   [44]: https://leetcode.com/problems/generate-parentheses/
-  [45]: ./images/ddd.gif (23. Merge k Sorted Lists)
+  [45]: ./images/red.gif (23. Merge k Sorted Lists)
   [46]: https://leetcode.com/problems/merge-k-sorted-lists/
   [47]: ./images/red.gif (24. Swap Nodes in Pairs)
   [48]: https://leetcode.com/problems/swap-nodes-in-pairs/
@@ -493,7 +493,7 @@ The flames of youth are raging.
   [290]: https://leetcode.com/problems/binary-tree-postorder-traversal/
   [291]: ./images/red.gif (146. LRU Cache)
   [292]: https://leetcode.com/problems/lru-cache/
-  [293]: ./images/ddd.gif (147. Insertion Sort List)
+  [293]: ./images/red.gif (147. Insertion Sort List)
   [294]: https://leetcode.com/problems/insertion-sort-list/
   [295]: ./images/ddd.gif (148. Sort List)
   [296]: https://leetcode.com/problems/sort-list/
