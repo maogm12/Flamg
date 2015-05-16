@@ -223,9 +223,9 @@ The flames of youth are raging.
   [20]: https://leetcode.com/problems/regular-expression-matching/
   [21]: ./images/red.gif (11. Container With Most Water)
   [22]: https://leetcode.com/problems/container-with-most-water/
-  [23]: ./images/ddd.gif (12. Integer to Roman)
+  [23]: ./images/red.gif (12. Integer to Roman)
   [24]: https://leetcode.com/problems/integer-to-roman/
-  [25]: ./images/ddd.gif (13. Roman to Integer)
+  [25]: ./images/red.gif (13. Roman to Integer)
   [26]: https://leetcode.com/problems/roman-to-integer/
   [27]: ./images/red.gif (14. Longest Common Prefix)
   [28]: https://leetcode.com/problems/longest-common-prefix/
@@ -239,7 +239,7 @@ The flames of youth are raging.
   [36]: https://leetcode.com/problems/4sum/
   [37]: ./images/red.gif (19. Remove Nth Node From End of List)
   [38]: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
-  [39]: ./images/ddd.gif (20. Valid Parentheses)
+  [39]: ./images/red.gif (20. Valid Parentheses)
   [40]: https://leetcode.com/problems/valid-parentheses/
   [41]: ./images/red.gif (21. Merge Two Sorted Lists)
   [42]: https://leetcode.com/problems/merge-two-sorted-lists/
@@ -263,13 +263,13 @@ The flames of youth are raging.
   [60]: https://leetcode.com/problems/substring-with-concatenation-of-all-words/
   [61]: ./images/red.gif (31. Next Permutation)
   [62]: https://leetcode.com/problems/next-permutation/
-  [63]: ./images/ddd.gif (32. Longest Valid Parentheses)
+  [63]: ./images/red.gif (32. Longest Valid Parentheses)
   [64]: https://leetcode.com/problems/longest-valid-parentheses/
   [65]: ./images/red.gif (33. Search in Rotated Sorted Array)
   [66]: https://leetcode.com/problems/search-in-rotated-sorted-array/
-  [67]: ./images/ddd.gif (34. Search for a Range)
+  [67]: ./images/red.gif (34. Search for a Range)
   [68]: https://leetcode.com/problems/search-for-a-range/
-  [69]: ./images/ddd.gif (35. Search Insert Position)
+  [69]: ./images/red.gif (35. Search Insert Position)
   [70]: https://leetcode.com/problems/search-insert-position/
   [71]: ./images/red.gif (36. Valid Sudoku)
   [72]: https://leetcode.com/problems/valid-sudoku/
@@ -461,9 +461,9 @@ The flames of youth are raging.
   [258]: https://leetcode.com/problems/sum-root-to-leaf-numbers/
   [259]: ./images/ddd.gif (130. Surrounded Regions)
   [260]: https://leetcode.com/problems/surrounded-regions/
-  [261]: ./images/ddd.gif (131. Palindrome Partitioning)
+  [261]: ./images/red.gif (131. Palindrome Partitioning)
   [262]: https://leetcode.com/problems/palindrome-partitioning/
-  [263]: ./images/ddd.gif (132. Palindrome Partitioning II)
+  [263]: ./images/red.gif (132. Palindrome Partitioning II)
   [264]: https://leetcode.com/problems/palindrome-partitioning-ii/
   [265]: ./images/ddd.gif (133. Clone Graph)
   [266]: https://leetcode.com/problems/clone-graph/
