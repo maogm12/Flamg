@@ -257,7 +257,7 @@ The flames of youth are raging.
   [54]: https://leetcode.com/problems/remove-element/
   [55]: ./images/red.gif (28. Implement strStr())
   [56]: https://leetcode.com/problems/implement-strstr/
-  [57]: ./images/ddd.gif (29. Divide Two Integers)
+  [57]: ./images/red.gif (29. Divide Two Integers)
   [58]: https://leetcode.com/problems/divide-two-integers/
   [59]: ./images/ddd.gif (30. Substring with Concatenation of All Words)
   [60]: https://leetcode.com/problems/substring-with-concatenation-of-all-words/
