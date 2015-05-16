@@ -269,7 +269,7 @@ The flames of youth are raging.
   [66]: https://leetcode.com/problems/search-in-rotated-sorted-array/
   [67]: ./images/red.gif (34. Search for a Range)
   [68]: https://leetcode.com/problems/search-for-a-range/
-  [69]: ./images/ddd.gif (35. Search Insert Position)
+  [69]: ./images/red.gif (35. Search Insert Position)
   [70]: https://leetcode.com/problems/search-insert-position/
   [71]: ./images/red.gif (36. Valid Sudoku)
   [72]: https://leetcode.com/problems/valid-sudoku/
