@@ -459,7 +459,7 @@ The flames of youth are raging.
   [256]: https://leetcode.com/problems/longest-consecutive-sequence/
   [257]: ./images/red.gif (129. Sum Root to Leaf Numbers)
   [258]: https://leetcode.com/problems/sum-root-to-leaf-numbers/
-  [259]: ./images/ddd.gif (130. Surrounded Regions)
+  [259]: ./images/red.gif (130. Surrounded Regions)
   [260]: https://leetcode.com/problems/surrounded-regions/
   [261]: ./images/red.gif (131. Palindrome Partitioning)
   [262]: https://leetcode.com/problems/palindrome-partitioning/
