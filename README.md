@@ -239,7 +239,7 @@ The flames of youth are raging.
   [36]: https://leetcode.com/problems/4sum/
   [37]: ./images/red.gif (19. Remove Nth Node From End of List)
   [38]: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
-  [39]: ./images/ddd.gif (20. Valid Parentheses)
+  [39]: ./images/red.gif (20. Valid Parentheses)
   [40]: https://leetcode.com/problems/valid-parentheses/
   [41]: ./images/red.gif (21. Merge Two Sorted Lists)
   [42]: https://leetcode.com/problems/merge-two-sorted-lists/
