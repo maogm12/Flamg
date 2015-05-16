@@ -437,7 +437,7 @@ The flames of youth are raging.
   [234]: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
   [235]: ./images/red.gif (118. Pascal's Triangle)
   [236]: https://leetcode.com/problems/pascals-triangle/
-  [237]: ./images/ddd.gif (119. Pascal's Triangle II)
+  [237]: ./images/red.gif (119. Pascal's Triangle II)
   [238]: https://leetcode.com/problems/pascals-triangle-ii/
   [239]: ./images/red.gif (120. Triangle)
   [240]: https://leetcode.com/problems/triangle/
