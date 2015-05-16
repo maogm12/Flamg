@@ -453,7 +453,7 @@ The flames of youth are raging.
   [250]: https://leetcode.com/problems/valid-palindrome/
   [251]: ./images/ddd.gif (126. Word Ladder II)
   [252]: https://leetcode.com/problems/word-ladder-ii/
-  [253]: ./images/ddd.gif (127. Word Ladder)
+  [253]: ./images/red.gif (127. Word Ladder)
   [254]: https://leetcode.com/problems/word-ladder/
   [255]: ./images/red.gif (128. Longest Consecutive Sequence)
   [256]: https://leetcode.com/problems/longest-consecutive-sequence/
