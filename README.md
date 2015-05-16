@@ -367,7 +367,7 @@ The flames of youth are raging.
   [164]: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
   [165]: ./images/red.gif (83. Remove Duplicates from Sorted List)
   [166]: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
-  [167]: ./images/ddd.gif (84. Largest Rectangle in Histogram)
+  [167]: ./images/red.gif (84. Largest Rectangle in Histogram)
   [168]: https://leetcode.com/problems/largest-rectangle-in-histogram/
   [169]: ./images/ddd.gif (85. Maximal Rectangle)
   [170]: https://leetcode.com/problems/maximal-rectangle/
