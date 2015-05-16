@@ -263,7 +263,7 @@ The flames of youth are raging.
   [60]: https://leetcode.com/problems/substring-with-concatenation-of-all-words/
   [61]: ./images/red.gif (31. Next Permutation)
   [62]: https://leetcode.com/problems/next-permutation/
-  [63]: ./images/ddd.gif (32. Longest Valid Parentheses)
+  [63]: ./images/red.gif (32. Longest Valid Parentheses)
   [64]: https://leetcode.com/problems/longest-valid-parentheses/
   [65]: ./images/red.gif (33. Search in Rotated Sorted Array)
   [66]: https://leetcode.com/problems/search-in-rotated-sorted-array/
