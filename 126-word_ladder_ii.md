@@ -47,17 +47,13 @@ class Solution:
 	def findLadders(self, start, end, dict):
 		len_w = len(start)
 		alphas = [chr(v) for v in range(ord('a'), ord('z')+1)]
-		
 		queue = [start]
 		pre_index = [[-1]]
-		end_pre = []
-		
 		begin_i = 0
 		end_i = 1
 		level = 1
 		is_over = False
 		visited = {}
-		
 		while begin_i < end_i:
 			word = queue[begin_i]
 			for i in range(len_w):
@@ -65,11 +61,9 @@ class Solution:
 					if ch == word[i]:
 						continue
 					new_word = word[0:i] + ch + word[i+1:]
-					
 					if new_word == end:
-						end_pre.append(begin_i)
 						is_over = True
-					elif new_word in visited:
+					if new_word in visited:
 						index = visited[new_word]
 						if index > begin_i:
 							pre_index[index].append(begin_i)
@@ -77,20 +71,16 @@ class Solution:
 						queue.append(new_word)
 						visited[new_word] = len(queue) - 1
 						pre_index.append([begin_i])
-						
 			if begin_i == end_i - 1:
 				level += 1
 				if is_over:
 					break
 				end_i = len(queue)
 			begin_i += 1
-			
-		queue.append(end)
-		pre_index.append(end_pre)
 		
 		self.results = []
-		self.gen_path(queue, pre_index, level, [], len(queue)-1)
-		
+		if end in visited:
+		    self.gen_path(queue, pre_index, level, [], visited[end])
 		return self.results
 	
 	def gen_path(self, queue, pre_index, level, result, current_index):
@@ -118,7 +108,6 @@ public:
         
         vector<string> queue;
         vector<vector<int> > pre_index;
-        vector<int> end_pre;
         queue.push_back(start);
         pre_index.push_back(vector<int> {-1});
         
@@ -139,10 +128,10 @@ public:
                     }
                     new_word[i] = ch;
                     if (new_word == end) {
-                        end_pre.push_back(begin_i);
                         is_over = true;
-                    } else if (visited.find(new_word) != visited.end()) {
-                        unordered_map<string,int>::iterator it = visited.find(new_word);
+                    } 
+                    if (visited.find(new_word) != visited.end()) {
+                        auto it = visited.find(new_word);
                         if (it->second > begin_i) {
                             pre_index[it->second].push_back(begin_i);
                         }
@@ -162,10 +151,10 @@ public:
             }
             begin_i++;
         }
-        queue.push_back(end);
-        pre_index.push_back(end_pre);
-		vector<string> result;
-        gen_path(queue, pre_index, result, queue.size()-1, level);
+		if (visited.find(end) != visited.end()) {
+		    gen_path(queue, pre_index, vector<string> {}, (visited.find(end))->second, level);
+		}
+        
         return results;
     }
     void gen_path(vector<string> &queue, vector<vector<int> > &pre_index, vector<string> result, int current_index, int level) {
@@ -186,5 +175,4 @@ public:
 private:
     vector<vector<string> > results;
 };
-
 ```
