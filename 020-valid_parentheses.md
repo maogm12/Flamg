@@ -49,7 +49,50 @@ public:
             }
         }
         return char_stack.empty();
-        
+
     }
 };
+```
+
+maybe we can create some helper function
+
+```cpp
+bool isValid(string s) {
+    stack<char> prth;
+    for (auto ch : s) {
+        switch (ch) {
+            case '(':
+            case '[':
+            case '{':
+                prth.push(ch);
+                break;
+            case ')':
+            case ']':
+            case '}':
+                if (prth.empty() || prth.top() != findPair(ch)) {
+                    return false;
+                } else {
+                    prth.pop();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    return prth.empty();
+}
+
+char findPair(char half) {
+    switch (half) {
+        case ')':
+            return '(';
+        case ']':
+            return '[';
+        case '}':
+            return '{';
+        default:
+            return ' ';
+    }
+}
 ```
