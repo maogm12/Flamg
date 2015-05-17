@@ -108,6 +108,83 @@ class Solution:
 
 ### C++
 
+> 注意： 使用map过不鸟，使用unordered_map可以过
+
 ```cpp
+class Solution {
+public:
+    vector<vector<string> > findLadders(string start, string end, unordered_set<string> &dict) {
+        int len_w = start.length();
+        
+        vector<string> queue;
+        vector<vector<int> > pre_index;
+        vector<int> end_pre;
+        queue.push_back(start);
+        pre_index.push_back(vector<int> {-1});
+        
+        unordered_map<string, int> visited;
+        visited.insert(make_pair(start, 0));
+        
+        int begin_i = 0;
+        int end_i = 1;
+        bool is_over = false;
+        int level = 1;
+        while (begin_i < end_i) {
+            string word = queue[begin_i];
+            for (int i = 0; i < len_w; i++) {
+                string new_word(word);
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    if (ch == word[i]) {
+                        continue;
+                    }
+                    new_word[i] = ch;
+                    if (new_word == end) {
+                        end_pre.push_back(begin_i);
+                        is_over = true;
+                    } else if (visited.find(new_word) != visited.end()) {
+                        unordered_map<string,int>::iterator it = visited.find(new_word);
+                        if (it->second > begin_i) {
+                            pre_index[it->second].push_back(begin_i);
+                        }
+                    } else if (dict.find(new_word) != dict.end()) {
+                        queue.push_back(new_word);
+                        pre_index.push_back(vector<int> {begin_i});
+                        visited.insert(make_pair(new_word, queue.size()-1));
+                    }
+                }
+            }
+            if (begin_i == end_i - 1) {
+                level++;
+                if (is_over) {
+                    break;
+                }
+                end_i = queue.size();
+            }
+            begin_i++;
+        }
+        queue.push_back(end);
+        pre_index.push_back(end_pre);
+		vector<string> result;
+        gen_path(queue, pre_index, result, queue.size()-1, level);
+        return results;
+    }
+    void gen_path(vector<string> &queue, vector<vector<int> > &pre_index, vector<string> result, int current_index, int level) {
+        if (result.size() == level) {
+            if (result[level-1] == queue[0]) {
+                reverse(result.begin(), result.end());
+                results.push_back(result);
+            }
+            return;
+        }
+        string word = queue[current_index];
+        vector<int> pre_is = pre_index[current_index];
+        result.push_back(word);
+        for (int it : pre_is) {
+            gen_path(queue, pre_index, result, it, level);
+        }
+    }
+private:
+    vector<vector<string> > results;
+};
 
 ```

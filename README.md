@@ -451,7 +451,7 @@ The flames of youth are raging.
   [248]: https://leetcode.com/problems/binary-tree-maximum-path-sum/
   [249]: ./images/red.gif (125. Valid Palindrome)
   [250]: https://leetcode.com/problems/valid-palindrome/
-  [251]: ./images/ddd.gif (126. Word Ladder II)
+  [251]: ./images/red.gif (126. Word Ladder II)
   [252]: https://leetcode.com/problems/word-ladder-ii/
   [253]: ./images/red.gif (127. Word Ladder)
   [254]: https://leetcode.com/problems/word-ladder/
