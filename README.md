@@ -553,7 +553,7 @@ The flames of youth are raging.
   [350]: https://leetcode.com/problems/largest-number/
   [351]: ./images/ddd.gif (186. Reverse Words in a String II)
   [352]: https://leetcode.com/problems/reverse-words-in-a-string-ii/
-  [353]: ./images/ddd.gif (187. Repeated DNA Sequences)
+  [353]: ./images/red.gif (187. Repeated DNA Sequences)
   [354]: https://leetcode.com/problems/repeated-dna-sequences/
   [355]: ./images/ddd.gif (188. Best Time to Buy and Sell Stock IV)
   [356]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
