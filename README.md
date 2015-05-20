@@ -465,7 +465,7 @@ The flames of youth are raging.
   [262]: https://leetcode.com/problems/palindrome-partitioning/
   [263]: ./images/red.gif (132. Palindrome Partitioning II)
   [264]: https://leetcode.com/problems/palindrome-partitioning-ii/
-  [265]: ./images/ddd.gif (133. Clone Graph)
+  [265]: ./images/red.gif (133. Clone Graph)
   [266]: https://leetcode.com/problems/clone-graph/
   [267]: ./images/red.gif (134. Gas Station)
   [268]: https://leetcode.com/problems/gas-station/
