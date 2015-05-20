@@ -275,7 +275,7 @@ The flames of youth are raging.
   [72]: https://leetcode.com/problems/valid-sudoku/
   [73]: ./images/ddd.gif (37. Sudoku Solver)
   [74]: https://leetcode.com/problems/sudoku-solver/
-  [75]: ./images/ddd.gif (38. Count and Say)
+  [75]: ./images/red.gif (38. Count and Say)
   [76]: https://leetcode.com/problems/count-and-say/
   [77]: ./images/red.gif (39. Combination Sum)
   [78]: https://leetcode.com/problems/combination-sum/
@@ -501,7 +501,7 @@ The flames of youth are raging.
   [298]: https://leetcode.com/problems/max-points-on-a-line/
   [299]: ./images/ddd.gif (150. Evaluate Reverse Polish Notation)
   [300]: https://leetcode.com/problems/evaluate-reverse-polish-notation/
-  [301]: ./images/ddd.gif (151. Reverse Words in a String)
+  [301]: ./images/red.gif (151. Reverse Words in a String)
   [302]: https://leetcode.com/problems/reverse-words-in-a-string/
   [303]: ./images/ddd.gif (152. Maximum Product Subarray)
   [304]: https://leetcode.com/problems/maximum-product-subarray/
@@ -519,7 +519,7 @@ The flames of youth are raging.
   [316]: https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/
   [317]: ./images/ddd.gif (159. Longest Substring with At Most Two Distinct Characters)
   [318]: https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
-  [319]: ./images/ddd.gif (160. Intersection of Two Linked Lists)
+  [319]: ./images/red.gif (160. Intersection of Two Linked Lists)
   [320]: https://leetcode.com/problems/intersection-of-two-linked-lists/
   [321]: ./images/ddd.gif (161. One Edit Distance)
   [322]: https://leetcode.com/problems/one-edit-distance/
