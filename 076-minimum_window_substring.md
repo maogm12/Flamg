@@ -75,5 +75,60 @@ class Solution:
 ### C++
 
 ```cpp
-
+class Solution {
+public:
+    string minWindow(string s, string t) {
+        unordered_map<char, int> char_dict;
+        for (int i = 0; i < t.length(); i++) {
+            auto it = char_dict.find(t[i]);
+            if (it != char_dict.end()) {
+                it->second++;
+            } else {
+                char_dict.insert(make_pair(t[i], 1));
+            }
+        }
+        int left = 0;
+        int right = 0;
+        int result_left = -1;
+        int result_right = -1;
+        while (right < s.length()) {
+            auto it = char_dict.find(s[right]);
+            if (it != char_dict.end()) {
+                char_dict[s[right]]--;
+                if (check_dict(char_dict)) {
+                    while (left <= right) {
+                        it = char_dict.find(s[left]);
+                        if (it != char_dict.end()) {
+                            if (it->second == 0) {
+                                break;
+                            }
+                            it->second++;
+                        }
+                        left++;
+                    }
+                    if ((result_left == -1 && result_right == -1) || (right - left) < (result_right - result_left)) {
+                        result_left = left;
+                        result_right = right;
+                    }
+                    char_dict[s[left]]++;
+                    left++;
+                }
+            }
+            right++;
+        }
+        if (result_left == -1 && result_right == -1) {
+            return "";
+        }
+        return s.substr(result_left, result_right - result_left + 1);
+    }
+    
+    bool check_dict(unordered_map<char, int> &char_dict) {
+        for (auto it : char_dict) {
+            if (it.second > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
 ```
