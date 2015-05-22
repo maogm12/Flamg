@@ -281,11 +281,11 @@ The flames of youth are raging.
   [78]: https://leetcode.com/problems/combination-sum/
   [79]: ./images/red.gif (40. Combination Sum II)
   [80]: https://leetcode.com/problems/combination-sum-ii/
-  [81]: ./images/ddd.gif (41. First Missing Positive)
+  [81]: ./images/red.gif (41. First Missing Positive)
   [82]: https://leetcode.com/problems/first-missing-positive/
   [83]: ./images/red.gif (42. Trapping Rain Water)
   [84]: https://leetcode.com/problems/trapping-rain-water/
-  [85]: ./images/ddd.gif (43. Multiply Strings)
+  [85]: ./images/red.gif (43. Multiply Strings)
   [86]: https://leetcode.com/problems/multiply-strings/
   [87]: ./images/ddd.gif (44. Wildcard Matching)
   [88]: https://leetcode.com/problems/wildcard-matching/
@@ -351,7 +351,7 @@ The flames of youth are raging.
   [148]: https://leetcode.com/problems/search-a-2d-matrix/
   [149]: ./images/red.gif (75. Sort Colors)
   [150]: https://leetcode.com/problems/sort-colors/
-  [151]: ./images/ddd.gif (76. Minimum Window Substring)
+  [151]: ./images/red.gif (76. Minimum Window Substring)
   [152]: https://leetcode.com/problems/minimum-window-substring/
   [153]: ./images/red.gif (77. Combinations)
   [154]: https://leetcode.com/problems/combinations/
