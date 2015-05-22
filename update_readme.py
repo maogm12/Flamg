@@ -50,13 +50,15 @@ def openReadMe(mode):
 def updateReadme():
     with openReadMe('r') as readme:
         content = readme.read()
-        content = content.decode('utf8')
+        if pedantic:
+            content = content.decode('utf8')
         marks = '## Achievement' + genHtml(getAllProblemId())
         r = re.compile(r'## Achievement.*',re.DOTALL)
         content = r.sub(marks, content)
 
     with openReadMe('w') as readme:
-        content = content.encode('utf8')
+        if pedantic:
+            content = content.encode('utf8')
         readme.write(content)
 
 if __name__ == '__main__':

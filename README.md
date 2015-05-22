@@ -259,7 +259,7 @@ The flames of youth are raging.
   [56]: https://leetcode.com/problems/implement-strstr/
   [57]: ./images/red.gif (29. Divide Two Integers)
   [58]: https://leetcode.com/problems/divide-two-integers/
-  [59]: ./images/ddd.gif (30. Substring with Concatenation of All Words)
+  [59]: ./images/red.gif (30. Substring with Concatenation of All Words)
   [60]: https://leetcode.com/problems/substring-with-concatenation-of-all-words/
   [61]: ./images/red.gif (31. Next Permutation)
   [62]: https://leetcode.com/problems/next-permutation/
@@ -275,7 +275,7 @@ The flames of youth are raging.
   [72]: https://leetcode.com/problems/valid-sudoku/
   [73]: ./images/ddd.gif (37. Sudoku Solver)
   [74]: https://leetcode.com/problems/sudoku-solver/
-  [75]: ./images/ddd.gif (38. Count and Say)
+  [75]: ./images/red.gif (38. Count and Say)
   [76]: https://leetcode.com/problems/count-and-say/
   [77]: ./images/red.gif (39. Combination Sum)
   [78]: https://leetcode.com/problems/combination-sum/
@@ -451,9 +451,9 @@ The flames of youth are raging.
   [248]: https://leetcode.com/problems/binary-tree-maximum-path-sum/
   [249]: ./images/red.gif (125. Valid Palindrome)
   [250]: https://leetcode.com/problems/valid-palindrome/
-  [251]: ./images/ddd.gif (126. Word Ladder II)
+  [251]: ./images/red.gif (126. Word Ladder II)
   [252]: https://leetcode.com/problems/word-ladder-ii/
-  [253]: ./images/ddd.gif (127. Word Ladder)
+  [253]: ./images/red.gif (127. Word Ladder)
   [254]: https://leetcode.com/problems/word-ladder/
   [255]: ./images/red.gif (128. Longest Consecutive Sequence)
   [256]: https://leetcode.com/problems/longest-consecutive-sequence/
@@ -465,7 +465,7 @@ The flames of youth are raging.
   [262]: https://leetcode.com/problems/palindrome-partitioning/
   [263]: ./images/red.gif (132. Palindrome Partitioning II)
   [264]: https://leetcode.com/problems/palindrome-partitioning-ii/
-  [265]: ./images/ddd.gif (133. Clone Graph)
+  [265]: ./images/red.gif (133. Clone Graph)
   [266]: https://leetcode.com/problems/clone-graph/
   [267]: ./images/red.gif (134. Gas Station)
   [268]: https://leetcode.com/problems/gas-station/
@@ -501,7 +501,7 @@ The flames of youth are raging.
   [298]: https://leetcode.com/problems/max-points-on-a-line/
   [299]: ./images/ddd.gif (150. Evaluate Reverse Polish Notation)
   [300]: https://leetcode.com/problems/evaluate-reverse-polish-notation/
-  [301]: ./images/ddd.gif (151. Reverse Words in a String)
+  [301]: ./images/red.gif (151. Reverse Words in a String)
   [302]: https://leetcode.com/problems/reverse-words-in-a-string/
   [303]: ./images/ddd.gif (152. Maximum Product Subarray)
   [304]: https://leetcode.com/problems/maximum-product-subarray/
@@ -519,7 +519,7 @@ The flames of youth are raging.
   [316]: https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/
   [317]: ./images/ddd.gif (159. Longest Substring with At Most Two Distinct Characters)
   [318]: https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
-  [319]: ./images/ddd.gif (160. Intersection of Two Linked Lists)
+  [319]: ./images/red.gif (160. Intersection of Two Linked Lists)
   [320]: https://leetcode.com/problems/intersection-of-two-linked-lists/
   [321]: ./images/ddd.gif (161. One Edit Distance)
   [322]: https://leetcode.com/problems/one-edit-distance/
@@ -553,7 +553,7 @@ The flames of youth are raging.
   [350]: https://leetcode.com/problems/largest-number/
   [351]: ./images/ddd.gif (186. Reverse Words in a String II)
   [352]: https://leetcode.com/problems/reverse-words-in-a-string-ii/
-  [353]: ./images/ddd.gif (187. Repeated DNA Sequences)
+  [353]: ./images/red.gif (187. Repeated DNA Sequences)
   [354]: https://leetcode.com/problems/repeated-dna-sequences/
   [355]: ./images/ddd.gif (188. Best Time to Buy and Sell Stock IV)
   [356]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
