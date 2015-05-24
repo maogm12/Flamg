@@ -49,14 +49,11 @@ class Solution:
                 stack.append(i)
                 i += 1
             else:
-                tmp_height = heights[stack[-1]]
-                stack.pop()
-                if len(stack) == 0:
-                    tmp_area = tmp_height * i
-                else:
-                    tmp_area = tmp_height * (i- stack[-1] - 1)
+                tmp_height = heights[stack.pop()]
+                tmp_area = tmp_height * i if len(stack) == 0 else tmp_height * (i- stack[-1] - 1)
                 max_area = max(tmp_area, max_area)
         return max_area
+
 ```
 
 ### C++
