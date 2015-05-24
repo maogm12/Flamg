@@ -19,7 +19,44 @@
 ### Python
 
 ```python
-
+class Solution:
+    # @param {character[][]} matrix
+    # @return {integer}
+    def maximalRectangle(self, matrix):
+        m = len(matrix)
+        if m == 0:
+            return 0
+        n = len(matrix[0])
+        level_heights = [[0 for j in range(n+1)] for i in range(m)]
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == '1':
+                    level_heights[i][j] = 1
+                    if i > 0:
+                        level_heights[i][j] += level_heights[i-1][j]
+        max_area = 0
+        for i in range(m):
+            max_area = max(max_area, self.get_max_area(level_heights[i]))
+        return max_area
+    
+    def get_max_area(self, heights):
+        stack = []
+        len_heights = len(heights)
+        max_area = 0
+        i = 0
+        while i < len_heights:
+            if len(stack) == 0 or heights[i] >= heights[stack[-1]]:
+                stack.append(i)
+                i += 1
+            else:
+                tmp_height = heights[stack[-1]]
+                stack.pop()
+                if len(stack) == 0:
+                    tmp_area = tmp_height * i
+                else:
+                    tmp_area = tmp_height * (i- stack[-1] - 1)
+                max_area = max(tmp_area, max_area)
+        return max_area
 ```
 
 ### C++
