@@ -373,7 +373,7 @@ The flames of youth are raging.
   [170]: https://leetcode.com/problems/maximal-rectangle/
   [171]: ./images/red.gif (86. Partition List)
   [172]: https://leetcode.com/problems/partition-list/
-  [173]: ./images/ddd.gif (87. Scramble String)
+  [173]: ./images/red.gif (87. Scramble String)
   [174]: https://leetcode.com/problems/scramble-string/
   [175]: ./images/red.gif (88. Merge Sorted Array)
   [176]: https://leetcode.com/problems/merge-sorted-array/
