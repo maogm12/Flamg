@@ -85,3 +85,42 @@ private:
 };
 
 ```
+
+A little improvement, we can use a bool array as a hash table
+
+```cpp
+vector<vector<int>> results;
+
+vector<vector<int>> permuteUnique(vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+    int size = nums.size();
+    if (size == 0) {
+        return results;
+    }
+
+    bool used[size];  // hash table
+    memset(used, false, size);
+
+    vector<int> prefix;
+    gen(nums, used, prefix);
+    return results;
+}
+
+void gen(vector<int> &nums, bool used[], vector<int>& prefix) {
+    if (prefix.size() == nums.size()) {
+        results.push_back(prefix);
+        return;
+    }
+
+    int before = -1;
+    for (int i = 0; i < nums.size(); ++i) {
+        if (used[i] || before != -1 && nums[i] == nums[before]) continue;
+        before = i;
+        prefix.push_back(nums[i]);
+        used[i] = true;
+        gen(nums, used, prefix);
+        prefix.pop_back();
+        used[i] = false;
+    }
+}
+```
