@@ -9,7 +9,7 @@
 > Determine if you are able to reach the last index.
 
 > For example:
-> 
+>
 A = `[2,3,1,1,4]`, return true.
 
 > A = `[3,2,1,0,4]`, return false.
@@ -38,7 +38,7 @@ class Solution:
                 return True
             i += 1
         return False
-        
+
 ```
 
 ### C++
@@ -62,4 +62,22 @@ public:
         return false;
     }
 };
+```
+
+Actually, when we find the current is bigger than `max_index`, we can return false
+
+```cpp
+bool canJump(vector<int>& nums) {
+    int rightMost = 0;
+    int size = nums.size();
+    for (int i = 0; i < size; ++i) {
+        if (i > rightMost ||          // i is not reachable
+            rightMost >= size - 1) {  // already cover the end
+            break;
+        }
+        rightMost = max(rightMost, i + nums[i]);
+    }
+
+    return rightMost >= size - 1;
+}
 ```
