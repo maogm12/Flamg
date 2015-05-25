@@ -385,7 +385,7 @@ The flames of youth are raging.
   [182]: https://leetcode.com/problems/decode-ways/
   [183]: ./images/red.gif (92. Reverse Linked List II)
   [184]: https://leetcode.com/problems/reverse-linked-list-ii/
-  [185]: ./images/ddd.gif (93. Restore IP Addresses)
+  [185]: ./images/red.gif (93. Restore IP Addresses)
   [186]: https://leetcode.com/problems/restore-ip-addresses/
   [187]: ./images/red.gif (94. Binary Tree Inorder Traversal)
   [188]: https://leetcode.com/problems/binary-tree-inorder-traversal/
