@@ -24,7 +24,7 @@ class Solution:
             return 1 / self.my_pow(-n, x)
         else:
             return self.my_pow(n, x)
-            
+
     def my_pow(self, n, x):
         pows_v = []
         v = x
@@ -34,7 +34,7 @@ class Solution:
             v = v*v
             pows += pows
         pows /= 2
-        
+
         result = 1
         index = len(pows_v) - 1
         while n > 0:
@@ -43,9 +43,9 @@ class Solution:
                 n -= pows
             pows /= 2
             index -= 1
-        
+
         return result
-                
+
 ```
 
 ### python up-to-down
@@ -60,7 +60,7 @@ class Solution:
             return 1 / self.my_pow(-n, x)
         else:
             return self.my_pow(n, x)
-            
+
     def my_pow(self, n, x):
         if n == 0:
             return 1
@@ -95,4 +95,53 @@ public:
         }
     }
 };
+```
+
+down-to-up
+
+里面有坑
+
+```cpp
+double myPow(double x, int n) {
+    if (n < 0) {
+        return 1/myPow2(x, -n);  // 转成 unsigned int，防止 INT_MIN 溢出！！！
+    }
+    return myPow2(x, n);
+}
+
+double myPow2(double x, unsigned int n) {
+    if (n == 0) {
+        return 1;
+    }
+
+    if (n == 1) {
+        return x;
+    }
+
+    vector<double> median;
+    int i = 1;
+    double temp = x;
+    median.push_back(x);
+    while (i <= n / 2) {  // i < n 的话， i *= 2 可能溢出！！！
+        i *= 2;
+        temp *= temp;
+        median.push_back(temp);
+    }
+
+    double result = 1;
+    for (int j = median.size() - 1; j >= 0; --j, i /= 2) {
+        if (n < i) {
+            continue;
+        }
+
+        result *= median[j];
+        n -= i;
+
+        if (n == 0) {
+            break;
+        }
+    }
+
+    return result;
+}
 ```
