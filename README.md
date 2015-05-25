@@ -393,7 +393,7 @@ The flames of youth are raging.
   [190]: https://leetcode.com/problems/unique-binary-search-trees-ii/
   [191]: ./images/red.gif (96. Unique Binary Search Trees)
   [192]: https://leetcode.com/problems/unique-binary-search-trees/
-  [193]: ./images/ddd.gif (97. Interleaving String)
+  [193]: ./images/red.gif (97. Interleaving String)
   [194]: https://leetcode.com/problems/interleaving-string/
   [195]: ./images/red.gif (98. Validate Binary Search Tree)
   [196]: https://leetcode.com/problems/validate-binary-search-tree/
