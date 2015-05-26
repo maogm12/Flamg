@@ -273,7 +273,7 @@ The flames of youth are raging.
   [70]: https://leetcode.com/problems/search-insert-position/
   [71]: ./images/red.gif (36. Valid Sudoku)
   [72]: https://leetcode.com/problems/valid-sudoku/
-  [73]: ./images/ddd.gif (37. Sudoku Solver)
+  [73]: ./images/red.gif (37. Sudoku Solver)
   [74]: https://leetcode.com/problems/sudoku-solver/
   [75]: ./images/red.gif (38. Count and Say)
   [76]: https://leetcode.com/problems/count-and-say/
@@ -385,7 +385,7 @@ The flames of youth are raging.
   [182]: https://leetcode.com/problems/decode-ways/
   [183]: ./images/red.gif (92. Reverse Linked List II)
   [184]: https://leetcode.com/problems/reverse-linked-list-ii/
-  [185]: ./images/ddd.gif (93. Restore IP Addresses)
+  [185]: ./images/red.gif (93. Restore IP Addresses)
   [186]: https://leetcode.com/problems/restore-ip-addresses/
   [187]: ./images/red.gif (94. Binary Tree Inorder Traversal)
   [188]: https://leetcode.com/problems/binary-tree-inorder-traversal/
@@ -393,7 +393,7 @@ The flames of youth are raging.
   [190]: https://leetcode.com/problems/unique-binary-search-trees-ii/
   [191]: ./images/red.gif (96. Unique Binary Search Trees)
   [192]: https://leetcode.com/problems/unique-binary-search-trees/
-  [193]: ./images/ddd.gif (97. Interleaving String)
+  [193]: ./images/red.gif (97. Interleaving String)
   [194]: https://leetcode.com/problems/interleaving-string/
   [195]: ./images/red.gif (98. Validate Binary Search Tree)
   [196]: https://leetcode.com/problems/validate-binary-search-tree/

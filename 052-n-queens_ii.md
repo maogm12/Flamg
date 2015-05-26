@@ -32,7 +32,7 @@ public:
         solve(result, 0, n);
         return results_num;
     }
-    
+
     void solve(vector<string> &result, int index, int n) {
         if (index == n) {
             results_num++;
@@ -45,7 +45,7 @@ public:
             }
         }
     }
-    
+
     bool check(vector<string> &result, int i, int j, int n) {
         int x = i-1;
         int y = j;
@@ -67,7 +67,18 @@ public:
         }
         return true;
     }
-    
+
+    /* challenge
+    bool check(vector<string>& result, int i, int j, int n) {
+        for (int row = 1; row <= i; ++row) {
+            if (result[i - row][j] == 'Q' || (j - row >= 0 && result[i - row][j - row] == 'Q') ||
+                (j + row < n && result[i - row][j + row] == 'Q')) {
+                return false;
+            }
+        }
+        return true;
+    }
+    */
 private:
     int results_num;
 };
