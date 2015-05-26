@@ -77,10 +77,35 @@ public:
             delete result;
         }
         return results;
-        
+
     }
     static bool cmp(Interval a, Interval b) {
         return a.start < b.start;
     }
 };
+```
+
+```cpp
+vector<Interval> merge(vector<Interval>& intervals) {
+    vector<Interval> result;
+    if (intervals.empty()) return result;
+
+    // sort
+    auto gt = [](const Interval& lh, const Interval& rh) {
+        return lh.start < rh.start;
+    };
+    sort(intervals.begin(), intervals.end(), gt);
+
+    result.reserve(intervals.size());
+    result.push_back(intervals[0]);
+    for (int i = 1; i < intervals.size(); ++i) {
+        auto last = result.rbegin();
+        if (intervals[i].start > last->end) {  // no overlapping
+            result.push_back(intervals[i]);
+        } else {    // overlapping, change the last interval
+            last->end = max(last->end, intervals[i].end);
+        }
+    }
+    return result;
+}
 ```
