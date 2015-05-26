@@ -329,7 +329,7 @@ The flames of youth are raging.
   [126]: https://leetcode.com/problems/unique-paths-ii/
   [127]: ./images/red.gif (64. Minimum Path Sum)
   [128]: https://leetcode.com/problems/minimum-path-sum/
-  [129]: ./images/ddd.gif (65. Valid Number)
+  [129]: ./images/red.gif (65. Valid Number)
   [130]: https://leetcode.com/problems/valid-number/
   [131]: ./images/red.gif (66. Plus One)
   [132]: https://leetcode.com/problems/plus-one/
@@ -571,4 +571,3 @@ The flames of youth are raging.
   [368]: https://leetcode.com/problems/number-of-islands/
   [369]: ./images/ddd.gif (201. Bitwise AND of Numbers Range)
   [370]: https://leetcode.com/problems/bitwise-and-of-numbers-range/
-
