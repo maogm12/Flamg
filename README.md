@@ -495,7 +495,7 @@ The flames of youth are raging.
   [292]: https://leetcode.com/problems/lru-cache/
   [293]: ./images/red.gif (147. Insertion Sort List)
   [294]: https://leetcode.com/problems/insertion-sort-list/
-  [295]: ./images/ddd.gif (148. Sort List)
+  [295]: ./images/red.gif (148. Sort List)
   [296]: https://leetcode.com/problems/sort-list/
   [297]: ./images/ddd.gif (149. Max Points on a Line)
   [298]: https://leetcode.com/problems/max-points-on-a-line/
