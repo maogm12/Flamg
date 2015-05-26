@@ -273,7 +273,7 @@ The flames of youth are raging.
   [70]: https://leetcode.com/problems/search-insert-position/
   [71]: ./images/red.gif (36. Valid Sudoku)
   [72]: https://leetcode.com/problems/valid-sudoku/
-  [73]: ./images/ddd.gif (37. Sudoku Solver)
+  [73]: ./images/red.gif (37. Sudoku Solver)
   [74]: https://leetcode.com/problems/sudoku-solver/
   [75]: ./images/red.gif (38. Count and Say)
   [76]: https://leetcode.com/problems/count-and-say/
