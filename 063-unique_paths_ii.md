@@ -50,7 +50,7 @@ class Solution:
                     continue
                 else:
                     dp[i][j] = 0
-                
+
                 if i > 0:
                     dp[i][j] += dp[i-1][j]
                 if j > 0:
@@ -79,7 +79,7 @@ public:
                 } else {
                     dp[i][j] = 0;
                 }
-                
+
                 if (i > 0) {
                     dp[i][j] += dp[i-1][j];
                 }
@@ -89,6 +89,37 @@ public:
             }
         }
         return dp[m-1][n-1];
+    }
+};
+```
+
+dp's Memoization
+
+```cpp
+class Solution {
+public:
+    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
+        int height = obstacleGrid.size();
+        if (height == 0) return 0;
+        int width = obstacleGrid[0].size();
+        if (width == 0) return 0;
+        if (obstacleGrid[0][0] == 1 || obstacleGrid[height - 1][width - 1] == 1) return 0;
+        vector<vector<int>> pathNum(height, vector<int>(width, -1));
+        pathNum[0][0] = 1;
+        return uniquePathsWithObstacles(obstacleGrid, pathNum, height - 1, width - 1);
+    }
+
+    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid, vector<vector<int>>& pathNum, int i, int j) {
+        if (pathNum[i][j] == -1) {
+            pathNum[i][j] = 0;
+            if (i > 0 && obstacleGrid[i - 1][j] == 0) {
+                pathNum[i][j] += uniquePathsWithObstacles(obstacleGrid, pathNum, i - 1, j);
+            }
+            if (j > 0 && obstacleGrid[i][j - 1] == 0) {
+                pathNum[i][j] += uniquePathsWithObstacles(obstacleGrid, pathNum, i, j - 1);
+            }
+        }
+        return pathNum[i][j];
     }
 };
 ```
