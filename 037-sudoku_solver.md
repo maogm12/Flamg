@@ -7,13 +7,13 @@
 > Empty cells are indicated by the character '.'.
 
 > You may assume that there will be only one unique solution.
-> 
+>
 > A sudoku puzzle...
 >
 ![](./images/250px-Sudoku-by-L2G-20050714.svg.png)
 >
 > ...and its solution numbers marked in red.
-> 
+>
 ![](./images/250px-Sudoku-by-L2G-20050714_solution.svg.png)
 
 ## Solution
@@ -45,7 +45,7 @@ class Solution:
 			str_row = ''.join(str_row)
 			board[i] = str_row
 		# print_matrix(board)
-		
+
 	def find_one(self, num_board):
 		for i in range(9):
 			for j in range(9):
@@ -63,7 +63,7 @@ class Solution:
 				if self.solve(num_board):
 					return True
 				num_board[i][j] = 0
-		
+
 
 	def check(self, num_board, v, i, j):
 		for k in range(9):
@@ -139,6 +139,64 @@ public:
         }
         return true;
     }
-    
+
+};
+```
+
+厚颜无耻地来贴代码 ``._.b
+
+```cpp
+class Solution {
+public:
+    void solveSudoku(vector<vector<char>>& board) {
+        solve(board);
+    }
+
+    bool solve(vector<vector<char>>& board) {
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                if (board[i][j] != '.') continue;
+
+                auto cand = candidates(board, i, j);
+                if (cand.empty()) return false;
+                for (auto digit: cand) {
+                    board[i][j] = digit + '0';
+                    if (solve(board)) return true;
+                    board[i][j] = '.';
+                }
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+	// 找出一个位置能填的所有数
+    vector<int> candidates(vector<vector<char>>& board, int row, int col) {
+        bool valid[9];
+        memset(valid, true, 9);
+        for (int i = 0; i < 9; ++i) {
+            // row
+            if (board[row][i] != '.') {
+                valid[board[row][i] - '0' - 1] = false;
+            }
+
+            // col
+            if (board[i][col] != '.') {
+                valid[board[i][col] - '0' - 1] = false;
+            }
+
+            // cell
+            if (board[i/3 + row/3*3][i%3 + col/3*3] != '.') {
+                valid[board[i/3 + row/3*3][i%3 + col/3*3] - '0' - 1] = false;
+            }
+        }
+
+        vector<int> result;
+        for (int i = 0; i < 9; ++i) {
+            if (valid[i]) result.push_back(i + 1);
+        }
+        return result;
+    }
 };
 ```

@@ -8,7 +8,7 @@
 
 > Note: A word is defined as a character sequence consists of non-space characters only.
 
-> For example, 
+> For example,
 Given s = "Hello World",
 return 5.
 
@@ -63,6 +63,24 @@ public:
             j--;
         }
         return len_s - j - 1;
+    }
+};
+```
+
+tidy the code
+
+```cpp
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        int i = s.size() - 1;
+        while (i >= 0 && s[i] == ' ') --i;
+        int len = 0;
+        while (i >= 0 && s[i] != ' ') {
+            ++len;
+            --i;
+        }
+        return len;
     }
 };
 ```

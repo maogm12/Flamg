@@ -63,7 +63,35 @@ public:
                 }
             }
         }
-        return dp[m-1][n-1];    
+        return dp[m-1][n-1];
+    }
+};
+```
+
+dp's Memoization
+
+```cpp
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        if (m == 0 || n == 0) return 0;
+        vector<vector<int>> pathNum(m, vector<int>(n, 0));
+        pathNum[0][0] = 1;
+        return uniquePaths(pathNum, m - 1, n - 1);
+    }
+
+    // zero based
+    int uniquePaths(vector<vector<int>>& pathNum, int m, int n) {
+        if (pathNum[m][n] == 0) {
+            if (m > 0) {
+                pathNum[m][n] += uniquePaths(pathNum, m - 1, n);
+            }
+            if (n > 0) {
+                pathNum[m][n] += uniquePaths(pathNum, m, n - 1);
+            }
+        }
+
+        return pathNum[m][n];
     }
 };
 ```
