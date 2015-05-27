@@ -85,6 +85,8 @@ public:
 };
 ```
 
+> 这是毛神的代码
+
 ```cpp
 vector<Interval> merge(vector<Interval>& intervals) {
     vector<Interval> result;
@@ -109,3 +111,27 @@ vector<Interval> merge(vector<Interval>& intervals) {
     return result;
 }
 ```
+
+> 祥子也试试黑科技
+
+```cpp
+class Solution {
+public:
+    vector<Interval> merge(vector<Interval>& intervals) {
+        vector<Interval> result;
+        auto gt = [](const Interval &lt, const Interval &rt) {
+            return lt.start < rt.start;
+        };
+        sort(intervals.begin(), intervals.end(), gt);
+        for (Interval interval : intervals) {
+            if (result.empty() || interval.start > result.back().end) {
+                result.push_back(interval);
+            } else {
+                result.back().end = max(result.back().end, interval.end);
+            }
+        }
+        return result;
+    }
+};
+```
+
