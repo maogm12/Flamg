@@ -445,7 +445,7 @@ The flames of youth are raging.
   [242]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
   [243]: ./images/red.gif (122. Best Time to Buy and Sell Stock II)
   [244]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
-  [245]: ./images/ddd.gif (123. Best Time to Buy and Sell Stock III)
+  [245]: ./images/red.gif (123. Best Time to Buy and Sell Stock III)
   [246]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
   [247]: ./images/red.gif (124. Binary Tree Maximum Path Sum)
   [248]: https://leetcode.com/problems/binary-tree-maximum-path-sum/
