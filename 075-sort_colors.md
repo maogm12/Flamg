@@ -70,3 +70,12 @@ public:
     }
 };
 ```
+
+这个是个快排的变形，可以使用标准库的 partition 方法
+
+```cpp
+void sortColors(vector<int>& nums) {
+    auto zero = partition(nums.begin(), nums.end(), [](int item){ return item <= 0; });
+    partition(zero, nums.end(), [](int item){ return item <= 1; });
+}
+```
