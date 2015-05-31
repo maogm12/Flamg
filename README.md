@@ -497,9 +497,9 @@ The flames of youth are raging.
   [294]: https://leetcode.com/problems/insertion-sort-list/
   [295]: ./images/red.gif (148. Sort List)
   [296]: https://leetcode.com/problems/sort-list/
-  [297]: ./images/ddd.gif (149. Max Points on a Line)
+  [297]: ./images/red.gif (149. Max Points on a Line)
   [298]: https://leetcode.com/problems/max-points-on-a-line/
-  [299]: ./images/ddd.gif (150. Evaluate Reverse Polish Notation)
+  [299]: ./images/red.gif (150. Evaluate Reverse Polish Notation)
   [300]: https://leetcode.com/problems/evaluate-reverse-polish-notation/
   [301]: ./images/red.gif (151. Reverse Words in a String)
   [302]: https://leetcode.com/problems/reverse-words-in-a-string/
@@ -509,7 +509,7 @@ The flames of youth are raging.
   [306]: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
   [307]: ./images/ddd.gif (154. Find Minimum in Rotated Sorted Array II)
   [308]: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
-  [309]: ./images/ddd.gif (155. Min Stack)
+  [309]: ./images/red.gif (155. Min Stack)
   [310]: https://leetcode.com/problems/min-stack/
   [311]: ./images/ddd.gif (156. Binary Tree Upside Down)
   [312]: https://leetcode.com/problems/binary-tree-upside-down/
@@ -563,11 +563,11 @@ The flames of youth are raging.
   [360]: https://leetcode.com/problems/reverse-bits/
   [361]: ./images/ddd.gif (191. Number of 1 Bits)
   [362]: https://leetcode.com/problems/number-of-1-bits/
-  [363]: ./images/ddd.gif (198. House Robber)
+  [363]: ./images/red.gif (198. House Robber)
   [364]: https://leetcode.com/problems/house-robber/
-  [365]: ./images/ddd.gif (199. Binary Tree Right Side View)
+  [365]: ./images/red.gif (199. Binary Tree Right Side View)
   [366]: https://leetcode.com/problems/binary-tree-right-side-view/
-  [367]: ./images/ddd.gif (200. Number of Islands)
+  [367]: ./images/red.gif (200. Number of Islands)
   [368]: https://leetcode.com/problems/number-of-islands/
-  [369]: ./images/ddd.gif (201. Bitwise AND of Numbers Range)
+  [369]: ./images/red.gif (201. Bitwise AND of Numbers Range)
   [370]: https://leetcode.com/problems/bitwise-and-of-numbers-range/
