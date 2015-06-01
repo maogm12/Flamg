@@ -602,9 +602,9 @@ The flames of youth are raging.
   [380]: https://leetcode.com/problems/reverse-linked-list/
   [381]: ./images/red.gif (207. Course Schedule)
   [382]: https://leetcode.com/problems/course-schedule/
-  [383]: ./images/ddd.gif (208. Implement Trie (Prefix Tree))
+  [383]: ./images/red.gif (208. Implement Trie (Prefix Tree))
   [384]: https://leetcode.com/problems/implement-trie-prefix-tree/
-  [385]: ./images/ddd.gif (209. Minimum Size Subarray Sum)
+  [385]: ./images/red.gif (209. Minimum Size Subarray Sum)
   [386]: https://leetcode.com/problems/minimum-size-subarray-sum/
   [387]: ./images/ddd.gif (210. Course Schedule II)
   [388]: https://leetcode.com/problems/course-schedule-ii/
