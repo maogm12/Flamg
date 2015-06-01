@@ -200,6 +200,25 @@ The flames of youth are raging.
 [![199. Binary Tree Right Side View][365]][366]
 [![200. Number of Islands][367]][368]
 [![201. Bitwise AND of Numbers Range][369]][370]
+[![202. Happy Number][371]][372]
+[![203. Remove Linked List Elements][373]][374]
+[![204. Count Primes][375]][376]
+[![205. Isomorphic Strings][377]][378]
+[![206. Reverse Linked List][379]][380]
+[![207. Course Schedule][381]][382]
+[![208. Implement Trie (Prefix Tree)][383]][384]
+[![209. Minimum Size Subarray Sum][385]][386]
+[![210. Course Schedule II][387]][388]
+[![211. Add and Search Word - Data structure design][389]][390]
+[![212. Word Search II][391]][392]
+[![213. House Robber II][393]][394]
+[![214. Shortest Palindrome][395]][396]
+[![215. Kth Largest Element in an Array][397]][398]
+[![216. Combination Sum III][399]][400]
+[![217. Contains Duplicate][401]][402]
+[![218. The Skyline Problem][403]][404]
+[![219. Contains Duplicate II][405]][406]
+[![220. Contains Duplicate III][407]][408]
 
   [1]: ./images/red.gif (1. Two Sum)
   [2]: https://leetcode.com/problems/two-sum/
@@ -571,3 +590,41 @@ The flames of youth are raging.
   [368]: https://leetcode.com/problems/number-of-islands/
   [369]: ./images/red.gif (201. Bitwise AND of Numbers Range)
   [370]: https://leetcode.com/problems/bitwise-and-of-numbers-range/
+  [371]: ./images/ddd.gif (202. Happy Number)
+  [372]: https://leetcode.com/problems/happy-number/
+  [373]: ./images/ddd.gif (203. Remove Linked List Elements)
+  [374]: https://leetcode.com/problems/remove-linked-list-elements/
+  [375]: ./images/ddd.gif (204. Count Primes)
+  [376]: https://leetcode.com/problems/count-primes/
+  [377]: ./images/ddd.gif (205. Isomorphic Strings)
+  [378]: https://leetcode.com/problems/isomorphic-strings/
+  [379]: ./images/ddd.gif (206. Reverse Linked List)
+  [380]: https://leetcode.com/problems/reverse-linked-list/
+  [381]: ./images/ddd.gif (207. Course Schedule)
+  [382]: https://leetcode.com/problems/course-schedule/
+  [383]: ./images/ddd.gif (208. Implement Trie (Prefix Tree))
+  [384]: https://leetcode.com/problems/implement-trie-prefix-tree/
+  [385]: ./images/ddd.gif (209. Minimum Size Subarray Sum)
+  [386]: https://leetcode.com/problems/minimum-size-subarray-sum/
+  [387]: ./images/ddd.gif (210. Course Schedule II)
+  [388]: https://leetcode.com/problems/course-schedule-ii/
+  [389]: ./images/ddd.gif (211. Add and Search Word - Data structure design)
+  [390]: https://leetcode.com/problems/add-and-search-word-data-structure-design/
+  [391]: ./images/ddd.gif (212. Word Search II)
+  [392]: https://leetcode.com/problems/word-search-ii/
+  [393]: ./images/ddd.gif (213. House Robber II)
+  [394]: https://leetcode.com/problems/house-robber-ii/
+  [395]: ./images/ddd.gif (214. Shortest Palindrome)
+  [396]: https://leetcode.com/problems/shortest-palindrome/
+  [397]: ./images/ddd.gif (215. Kth Largest Element in an Array)
+  [398]: https://leetcode.com/problems/kth-largest-element-in-an-array/
+  [399]: ./images/ddd.gif (216. Combination Sum III)
+  [400]: https://leetcode.com/problems/combination-sum-iii/
+  [401]: ./images/ddd.gif (217. Contains Duplicate)
+  [402]: https://leetcode.com/problems/contains-duplicate/
+  [403]: ./images/ddd.gif (218. The Skyline Problem)
+  [404]: https://leetcode.com/problems/the-skyline-problem/
+  [405]: ./images/red.gif (219. Contains Duplicate II)
+  [406]: https://leetcode.com/problems/contains-duplicate-ii/
+  [407]: ./images/ddd.gif (220. Contains Duplicate III)
+  [408]: https://leetcode.com/problems/contains-duplicate-iii/
