@@ -592,7 +592,7 @@ The flames of youth are raging.
   [370]: https://leetcode.com/problems/bitwise-and-of-numbers-range/
   [371]: ./images/red.gif (202. Happy Number)
   [372]: https://leetcode.com/problems/happy-number/
-  [373]: ./images/ddd.gif (203. Remove Linked List Elements)
+  [373]: ./images/red.gif (203. Remove Linked List Elements)
   [374]: https://leetcode.com/problems/remove-linked-list-elements/
   [375]: ./images/ddd.gif (204. Count Primes)
   [376]: https://leetcode.com/problems/count-primes/
