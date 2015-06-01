@@ -596,11 +596,11 @@ The flames of youth are raging.
   [374]: https://leetcode.com/problems/remove-linked-list-elements/
   [375]: ./images/red.gif (204. Count Primes)
   [376]: https://leetcode.com/problems/count-primes/
-  [377]: ./images/ddd.gif (205. Isomorphic Strings)
+  [377]: ./images/red.gif (205. Isomorphic Strings)
   [378]: https://leetcode.com/problems/isomorphic-strings/
-  [379]: ./images/ddd.gif (206. Reverse Linked List)
+  [379]: ./images/red.gif (206. Reverse Linked List)
   [380]: https://leetcode.com/problems/reverse-linked-list/
-  [381]: ./images/ddd.gif (207. Course Schedule)
+  [381]: ./images/red.gif (207. Course Schedule)
   [382]: https://leetcode.com/problems/course-schedule/
   [383]: ./images/ddd.gif (208. Implement Trie (Prefix Tree))
   [384]: https://leetcode.com/problems/implement-trie-prefix-tree/
