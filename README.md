@@ -594,7 +594,7 @@ The flames of youth are raging.
   [372]: https://leetcode.com/problems/happy-number/
   [373]: ./images/red.gif (203. Remove Linked List Elements)
   [374]: https://leetcode.com/problems/remove-linked-list-elements/
-  [375]: ./images/ddd.gif (204. Count Primes)
+  [375]: ./images/red.gif (204. Count Primes)
   [376]: https://leetcode.com/problems/count-primes/
   [377]: ./images/ddd.gif (205. Isomorphic Strings)
   [378]: https://leetcode.com/problems/isomorphic-strings/
