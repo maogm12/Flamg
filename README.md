@@ -612,7 +612,7 @@ The flames of youth are raging.
   [390]: https://leetcode.com/problems/add-and-search-word-data-structure-design/
   [391]: ./images/ddd.gif (212. Word Search II)
   [392]: https://leetcode.com/problems/word-search-ii/
-  [393]: ./images/ddd.gif (213. House Robber II)
+  [393]: ./images/red.gif (213. House Robber II)
   [394]: https://leetcode.com/problems/house-robber-ii/
   [395]: ./images/ddd.gif (214. Shortest Palindrome)
   [396]: https://leetcode.com/problems/shortest-palindrome/
