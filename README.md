@@ -580,7 +580,7 @@ The flames of youth are raging.
   [358]: https://leetcode.com/problems/rotate-array/
   [359]: ./images/ddd.gif (190. Reverse Bits)
   [360]: https://leetcode.com/problems/reverse-bits/
-  [361]: ./images/ddd.gif (191. Number of 1 Bits)
+  [361]: ./images/red.gif (191. Number of 1 Bits)
   [362]: https://leetcode.com/problems/number-of-1-bits/
   [363]: ./images/red.gif (198. House Robber)
   [364]: https://leetcode.com/problems/house-robber/
