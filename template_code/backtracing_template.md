@@ -7,7 +7,7 @@ void helper(vector<vector<int>> &results, vector<int> &nums, vector<int> cur, in
 				results.push_back(cur);
 				return;
 		}
-		
+
 		// 一些遍历循环，每一次循环形成一个新状态，然后递归调用
 		for (int i = index; i < nums.size(); i++) {
 				cur.push_back(nums[i]);
@@ -36,18 +36,18 @@ public:
     void generate(vector<vector<int>> &results, vector<int> &nums, vector<int> &cur, int index) {
     		// 后面的元素通通都不要的情况
         results.push_back(cur);
-        
+
         if (index == nums.size()) {
             return;
         }
-        
+
         // 后面的元素取某个位置的情况
         for (int i = index; i < nums.size(); i++) {
             cur.push_back(nums[i]);
             generate(results, nums, cur, i+1);
             cur.pop_back();
         }
-        
+
     }
 
 };
@@ -72,13 +72,13 @@ public:
         return results;
     }
     void generate(vector<vector<int>> &results, vector<int> &S, vector<int> &cur, int pos) {
-    
+
     		// 后面的情况通通都不要的情况
         results.push_back(cur);
         if (pos == S.size()) {
             return;
         }
-        
+
         // 后面的情况得要，但是得排除重复情况
         for (int i = pos; i < S.size(); i++) {
             if (i > pos && S[i] == S[i-1]) {
@@ -116,13 +116,13 @@ public:
         if (cur_sum == target) {
             results.push_back(cur);
             return;
-        } 
-        
+        }
+
         // 越过了最后一个元素，停止
         if (index >= candidates.size()) {
             return;
         }
-        
+
         // 将当前元素的各种情况考虑进去，不考虑当前元素，考虑加入1个、2个、3个等等
         while (cur_sum <= target) {
             helper(results, candidates, cur, index+1, cur_sum, target);
@@ -152,7 +152,7 @@ public:
         helper(results, num, result, 0, 0, target);
         return results;
     }
-    
+
     void helper(vector<vector<int>> &results, vector<int> &num, vector<int> &cur, int pos, int cur_sum, const int target) {
         if (cur_sum == target) {
             results.push_back(cur);
@@ -161,7 +161,7 @@ public:
         if (pos >= num.size()) {
             return;
         }
-        
+
         for (int i = pos; i < num.size() && cur_sum + num[i] <= target; i++) {
             if (i > pos && num[i] == num[i-1]) {
                 continue;
@@ -192,7 +192,7 @@ public:
         helper(results, result, 1, n, k);
         return results;
     }
-    
+
     void helper(vector<vector<int>> &results, vector<int> &cur, int pos, int n, int k) {
         if (cur.size() == k) {
             results.push_back(cur);
@@ -209,3 +209,26 @@ public:
 };
 ```
 
+## Gray Code
+
+```cpp
+vector<int> grayCode(int n) {
+	int current = 0;
+	vector<int> codes;
+	grayCodeHelper(n, n - 1, current, codes);
+	return codes;
+}
+
+void grayCodeHelper(int n, int pos, int& current, vector<int>& codes) {
+	if (pos == -1) {
+		codes.push_back(current);
+		return;
+	}
+
+	grayCodeHelper(n, pos - 1, current, codes);
+	current ^= (1 << pos);
+	grayCodeHelper(n, pos - 1, current, codes);
+	// Causes the successive elements have only 1 bit different
+	// We do not change the bit back here
+}
+```
