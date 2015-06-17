@@ -84,3 +84,73 @@ public:
 };
 
 ```
+
+## 最少子串覆盖
+
+```
+class Solution {
+public:    
+    /**
+     * @param source: A string
+     * @param target: A string
+     * @return: A string denote the minimum window
+     *          Return "" if there is no such a string
+     */
+    string minWindow(string &source, string &target) {
+        // write your code here
+        unordered_map<char, int> char_dict;
+        for (char c : target) {
+            auto it = char_dict.find(c);
+            if (it == char_dict.end()) {
+                char_dict.insert(make_pair(c, 1));
+            } else {
+                it->second++;
+            }
+        }
+        
+        int begin = 0; 
+        int end = 0;
+        
+        pair<int, int> result(-1, -1);
+        while (end < source.length()) {
+            auto it = char_dict.find(source[end]);
+            if (it != char_dict.end()) {
+                it->second--;
+                if (check_dict(char_dict)) {
+                    while (begin < end) {
+                        auto begin_it = char_dict.find(source[begin]);
+                        if (begin_it != char_dict.end()) {
+                            if (begin_it->second == 0) {
+                                break;
+                            } else {
+                                begin_it->second++;
+                            }
+                        }
+                        begin++;
+                    }
+                    if (result.first == -1 || 
+                            end - begin < result.second - result.first) {
+                        result.first = begin;
+                        result.second = end;
+                    } 
+                }
+            }
+            end++;
+        }
+        if (result.first == -1) {
+            return "";
+        } else {
+            return source.substr(result.first, result.second - result.first + 1);
+        }
+    }
+    bool check_dict(unordered_map<char, int> &char_dict) {
+        for (auto it : char_dict) {
+            if (it.second > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
+```
