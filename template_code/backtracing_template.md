@@ -1,3 +1,10 @@
+## English description
+
+- We start at the top-most row, 
+- for each row, we iterate in all the valid places to put the queen, we choose one place, and marked it as part our result, 
+- we do the process recursively for the rest rows.
+- after we got to the bottom-most row, we record the answer.
+
 ## 模板
 
 ```
